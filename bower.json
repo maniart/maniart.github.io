@@ -1,0 +1,20 @@
+{
+  "name": "maniart.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/maniart/maniart.github.io",
+  "authors": [
+    "maniart <mani.art@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3",
+    "reveal.js": "~3.1.0"
+  }
+}
