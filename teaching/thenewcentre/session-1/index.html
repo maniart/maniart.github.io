@@ -38,365 +38,112 @@
 			<div class="slides">
 				
 				<section>
-					<h3>var lesson = "Strings";</h3>
+					<h3>Internet as Platform, Programming as Medium</h3>
 					<p>
-						<small>03.11.2015</small>
+						1. Procedural thinking: Programming fundamentals						
 					</p>
+					<small>The New Centre for Research &amp; Practice</small>
+					<small>07.12.2015</small>	
 				</section>
 
 				<section>
-					<h3>What are Strings?</h3>
+					<h3>Overview</h3>
+					<ol>
+						<li>Historical / theoretical framework</li>
+						<li>Critical discussion</li>
+						<li>Code</li>
+					</ol>
 				</section>
 
 				<section>
-					<h3>How do we make Strings?</h3>
+					<h3>Structure</h3>
+					<ol>
+						<li>New material</li>
+						<li>Live coding</li>
+						<li>Discussion</li>
+					</ol>
 				</section>
+
+				<section>
+					<h3>Logistics</h3>
+					<ol>
+						<li><a target="_blank" href="http://github.com">Get a github account</a></li>
+						<li><a target="_blank" href="http://codepen.io">Get a codepen</a></li>
+						<li><a target="_blank" href="http://codepen.io/maniart/pen/rVvRaM">Fork this for your projects</a></li>
+						<li><a target="_blank" href="mailto:mani.art@gmail.com">Reach me at mani.art@gmail.com</a></li>
+					</ol>
+				</section>
+
+				<section>
+					<p>
+						We will be focusing on three main areas in creative computation for the internet:	
+					</p>
+					<ul>
+						<li>
+							Algorithmic and procedural art: This will lead us in to the realm of simulation
+						</li>
+						<li>
+							Digital collages: we will see how we can apply algorithms to manipulate images
+						</li>
+						<li>
+							Computer Vision: we will experiment with computer vision and networks.
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>
+						A few notes:
+					</h3>
+					<ul>
+						<li>
+							I’m here to help. Reach out between classes.
+						</li>
+						<li>
+							If you learn how to formulate your question, the internet has all the answers
+						</li>
+						<li>
+							Stick with it, and it will grow on you
+						</li>
+						<li>
+							Like natural languages, programming languages need practice.
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="assets/niepce.jpg">
+					<small>1826: View from the Window at Le Gras - Nicéphore Niépce - <a href="https://en.wikipedia.org/wiki/View_from_the_Window_at_Le_Gras">source</a></small>
+				</section>
+
+				<section>
+					<img src="assets/bresson.jpg">
+					<small><a href="http://erickimphotography.com/blog/2011/08/22/10-things-henri-cartier-bresson-can-teach-you-about-street-photography/">source</a></small>
+				</section>
+
+				<section>
+					<img src="assets/univac.jpg">
+					<small>UNIVAC - <a href="http://www.computerhistory.org/timeline/?year=1951">source</a></small>
+				</section>
+
+				<section>
+					<img src="assets/mohr-self.jpg">
+					<br>
+					<small>Manfred Mohr - <a href="http://www.art-agenda.com/shows/manfred-mohr-at-bitforms-gallery-nyc/">source</a></small>
+				</section>
+
+				<section>
+					<img src="assets/mohr.jpg">
+					<small>Manfred Mohr - P-197pz, 1977-1987
+Plotter drawing ink on paper - <a href="https://www.artsy.net/artwork/manfred-mohr-p-197pz">source</a></small>
+				</section>
+				
 
 				<section>
 <pre><code data-trim>
 var buzz = "To infinity, and beyond!";
 </code></pre>
-				</section>
-
-				<section>
-					<h3>Single quote or Double quote, both work.</h3>
-				</section>
-
-				<section>
-					<h3>Key Points</h3>
-					<ul>
-						<li>
-							Strings are made up of multiple characters. A set of characters "strung" together make a string.
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Key Points</h3>
-					<ul>
-						<li>
-							Existing functions can be used to manipulate strings.
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Key Points</h3>
-					<ul>
-						<li>
-							The first index of a string is 0. The last index is length-1.
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Key Points</h3>
-					<ul>
-						<li>
-							Strings can be cast to a number and vice versa.
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Key Points</h3>
-					<ul>
-						<li>
-							Strings can be compared to one another.
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Storing a String in a variable and printing it.</h3>
-				</section>
-
-				<section>
-<pre><code data-trim>
-var buzz = "To infinity, and beyond!";
-console.log(buzz); // prints "To infinity, and beyond!"
-</code></pre>
-				</section>
-
-				<section>
-					<h3>Great. Now, what do you think the following code does?</h3>
-				</section>
-
-				<section>
-<pre><code data-trim>
-console.log(buzz.length); 
-</code></pre>
-				</section>
-
-				<section>
-<pre><code data-trim>
-console.log(buzz.length); // prints 24 - the number of characters in the string
-</code></pre>
-				</section>
-
-				<section>
-					<h3>very important, yet simple thing about computers and counting.</h3>
-					<p>Computers start counting from 0. not 1.</p>
-				</section>
-
-				<section>
-					<h3>Now, what if we want to print only the "first" character in our string?</h3>
-					<p>Remember that computers start counting from 0. not 1.</p>
-				</section>
-
-				<section>
-<pre><code data-trim>
-console.log(buzz.charAt(0)); // prints 'T'
-</code></pre>
-				</section>
-
-				<section>
-					<h3>`charAt` function</h3>
-					<p>Pass an index, get a character!</p>
-					<p>Let's do some more of this.</p>
-				</section>
-
-				<section>
-					<h3>Let's get the 9th character on our `buzz` string</h3>
-				</section>
-
-				<section>
-<pre><code data-trim>
-console.log(buzz.charAt(9)); // prints 't'
-</code></pre>
-				</section>
-
-				<section>
-					<h3>Let's print the last character on the `buzz` string</h3>
-				</section>
-
-				<section>
-<pre><code data-trim>
-console.log(buzz.charAt(buzz.length-1)); // prints '!'
-</code></pre>
-				</section>
-
-				<section>
-					<h3>Now let's reverse the question: What if I want to know the index of a given character?</h3>
-				</section>
-
-				<section>
-<pre><code data-trim>
-var index = buzz.indexOf('i'); 
-console.log(index); // prints 3
-</code></pre>
-				</section>
 				
-				<section>
-					<h3>Great, now let's try another character.</h3>
-				</section>
-
-				<section>
-<pre><code data-trim>
-var index = buzz.indexOf('o'); 
-</code></pre>
-				</section>
-
-				<section>
-					<h3>But what if there's more than one instance of a character in our string?</h3>
-					<p>For example, in our `buzz` string, we have two instances of the letter `i`</p>
-				</section>
-
-				<section>
-					
-<pre><code data-trim>
-var index = buzz.lastIndexOf('i'); 
-console.log(index); // prints 8
-</code></pre>
-				</section>
-
-				<section>
-					<h3>Coding time!</h3>
-					<p><a href="http://jsbin.com/huriyof/1/edit">http://jsbin.com/huriyof/1/edit</a></p>
-				</section>
-
-				<section>
-					<h3>Let's split a string.</h3>
-					<p>Suppose we have a string that contains a sentence with two words. Suppose we want to split the sentence into two parts.</p>
-				</section>
-
-				<section>
-<pre><code data-trim>
-var rex = "I roar!";
-console.log(rex.slice(0,1));
-console.log(rex.slice(2,6));
-</code></pre>
-				</section>
-
-				<section>
-					<p>`slice` is a function that takes two parameters: a starting index and an ending index. The function then extracts the mini-string inside the original based on the two indices. This resulting string is called a `sub-string.`</p>
-				</section>
-
-				<section>
-					<h3>Upper case &amp; lower case</h3>
-					<p>Suppose we have a string and want to make it all upper case. We can:</p>
-<pre><code data-trim>
-var potatoHead = "Hey, a laser! How come you don't have a laser, Woody?";
-var angryPotatoHead = potatoHead.toUpperCase();
-console.log(angryPotatoHead); 
-// prints "HEY, A LASER! HOW COME YOU DON'T HAVE A LASER, WOODY?"
-</code></pre>
-				</section>
-
-				<section>
-					<h3>How to convert a string to lower case?</h3>
-					<p>If we can haz `toUpperCase`, we can haz ...<p>
-				</section>
-
-				<section>
-<pre><code data-trim>
-var nicePotatoHead = angryPotatoHead.toLowerCase();
-console.log(nicePotatoHead);
-// prints "hey, a laser! how come you don't have a laser, woody?"
-</code></pre>
-				</section>
-
-				<section>
-					<h3>Suppose we want to replace a word in a string. We can:</h3>
-				</section>
-
-				<section>
-<pre><code data-trim>
-var dory = "Hey, look! Sharks!";
-var otherDory = dory.replace("Sharks", "Turtles");
-console.log(otherDory);
-// prints "Hey, look! Turtles!"
-</code></pre>
-				</section>
-
-				<section>
-					<p>
-						The `replace()` function takes in two parameters: a string to replace and the string to replace with. It searches in the original string for the first parameter. It then replaces it with the second parameter. The above prints Hey, look! Turtles!.
-					</p>
-				</section>
-
-				<section>
-					<h3>Concatenate!</h3>
-					<p>Suppose you want to join two strings together. We can:</p>
-				</section>
-
-
-				<section>
-<pre><code data-trim>
-var marlinOne = "No, no more whale!";
-var marlinTwo = "You can't speak whale!";
-var marlinJoined = marlinOne.concat(marlinTwo);
-console.log(marlinJoined);
-// prints "No, no more whale!You can't speak whale!"
-</code></pre>
-				</section>
-
-				<section>
-					<p>The concat function takes in one parameter: the string that is to be added to the end of the original string. It returns a joined or concatenated string.</p>
-				</section>
-
-				<section>
-					<p>You can also simply use the `+` operator to concatenate strings</p>
-<pre><code data-trim>
-var marlinOne = "No, no more whale!";
-var marlinTwo = "You can't speak whale!";
-var marlinJoined = marlinOne + marlinTwo;
-console.log(marlinJoined);
-// prints "No, no more whale!You can't speak whale!"
-</code></pre>
-				</section>
-
-				<section>
-					<h3>Trim</h3>
-					<p>The invisible character that gets created when you tap the space bar on your keyboard is called whitespace. Consider the following string:</p>
-<pre><code data-trim>
-var dory = "Your son Chico?";
-</code></pre>
-				</section>
-
-				<section>
-					<p>Sometimes strings have unnecessary whitespaces at the end of them like so:</p>
-<pre><code data-trim>
-var marlin = "Nemo   ";
-</code></pre>
-				<p>let's print the length of `marlin`.</p>
-				</section>
-
-				<section>
-					<p>Now, let's get rid of the extra whitespace</p>
-<pre><code data-trim>
-var cleanMarlin = marlin.trim();
-console.log(cleanMarlin.length);
-</code></pre>
-				</section>
-
-				<section>
-					<p>`trim()` is a function that removes whitespace both at the beginning and end of the string it is operating on. The above will print 4 to the console.</p>
-				</section>
-
-				<section>
-					<h3>Cast</h3>
-					<p>Suppose the following:</p>
-<pre><code data-trim>
-var x = 42;
-x.concat(" is the best number ever!");
-</code></pre>
-				</section>
-
-				<section>
-					<h3>Why did we fail?</h3>
-				</section>
-
-				<section>
-					<p>Because `x` is of the type `Number`. We can't `concat` a `Number` to a `String.</p>
-					<p>Unless...</p>	
-				</section>
-
-				<section>
-<pre><code data-trim>
-var xString = parseInt(x);
-var newString = xString.concat(" is the best number ever!");
-console.log(newString);
-</code></pre>			
-				</section>
-
-				<section>
-					<p>`parseInt()` is a function that takes in one parameter: an integer. It returns the string form of the integer.</p>
-				</section>
-
-				<section>
-					<h3>Comparison</h3>
-					<p>To compare two strings, we can use the === operator:</p>
-<pre><code data-trim>
-var w = "Hello";
-var x = "Hello";
-var y = "hello";
-var z = "hello  ";
-
-console.log(w==x);
-console.log(w==y);
-console.log(y==z);
-console.log(y==z.trim());
-
-// prints:
-/* 
-	true
-	false
-	false
-	true
-*/
-</code></pre>
-				</section>
-				
-				<section>
-					<h3>Let's code together!</h3>
-					<p><a href="http://jsbin.com/zoleye/1/edit">http://jsbin.com/zoleye/1/edit</a></p>
-				</section>
-
-				<section>
-					<h3>Now you code!</h3>
-					<p><a href="http://jsbin.com/ruvuno/3/edit">http://jsbin.com/ruvuno/3/edit</a></p>
-				</section>
 			
 
 			</div>
