@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Internet as platform, Programming as medium - Session 1</title>
+
+		<meta name="description" content="Internet as platform, Programming as medium - Session 1 @ The New Centre for Reseach and Practice">
+		<meta name="author" content="Mani Nilchiani">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../../../bower_components/reveal.js/css/theme/white.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../../../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="../../../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<style type="text/css">
+		ol, ol li, ul li {
+			font-size: .8em!important;
+		}
+	</style>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section>
+					<h3>Internet as Platform, Programming as Medium</h3>
+					<p>
+						2. Simulation: The art of imitation						
+					</p>
+					<small>The New Centre for Research &amp; Practice</small>
+					<small>07.19.2015</small>	
+				</section>
+
+				<section>
+					<img src="assets/variable.gif">
+				</section>
+
+				<section>
+<pre><code data-trim>
+function setup() {
+	// executed once
+	// setup your drawing environment here
+}
+function draw() {
+	// executed repeatedly 
+	// write your drawing code here
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h3>
+						Coding time.
+					</h3>
+					<p>
+						In this section, we will go over a number of simple code examples. There are some pre-written pseudo code examples that we will turn into actual code/drawings 
+					</p>
+				</section>
+
+				<section>
+					<h4>one</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800 x 600</li>
+						<li>the canvas background is a light grey</li>
+						<li>put the pen at coordinates 0,0</li>
+						<li>set your initial (x,y) to (0,0)</li>
+						<li>draw a 4px thick black line from coordinates (x,y) to (width,y)</li>
+						<li>move the pen 20 pixels down along the y axis</li>
+						<li>repeat steps 5 to 6 until (y) is equal to (height)</li>
+					</ol>
+				</section>
+
+				<section>
+					<h4>two</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800 x 600</li>
+						<li>the canvas background is a light grey</li>
+						<li>put the pen at coordinates 0,0</li>
+						<li>set your initial (x,y) to (0,0)</li>
+						<li>draw a 4px thick black line from coordinates (x,y) to (width,y)</li>
+						<li>move the pen 20 pixels down along the y axis</li>
+						<li>repeat steps 5 to 6 until (y) is equal to (height)</li>
+						<li>set your initial (x,y) to (0,0)</li>
+						<li>draw a 4px blue line from coordinates (x,y) to (x, height)</li>
+						<li>move the pen 20 pixels right along the x axis</li>
+						<li>repeat steps 9 to 10 until (x) is equal to width</li>
+					</ol>
+				</section>
+
+				<section>
+					<h4>three</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800 x 600</li>
+						<li>the canvas background is a light grey</li>
+						<li>put the pen at coordinates 0,0</li>
+						<li>set your initial (x,y) to (0,0)</li>
+						<li>draw a 4px thick black line from coordinates (x,y) to (width,y)</li>
+						<li>move the pen 20 pixels down along the y axis</li>
+						<li>multiply the thickness of the line by .1 of current y coordinates</li>
+						<li>repeat steps 5 to 6 until (y) is equal to (height)</li>
+					</ol>
+				</section>
+
+				<section>
+					<h4>four</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800 x 600</li>
+						<li>draw 100 (10 x 10) rectangles in random positions within the confines of the canvas</li>
+					</ol>
+				</section>
+
+				<section>
+					<h4>five</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800 x 600</li>
+						<li>draw 200 circles with 4px thick outline in random positions within the confines of the canvas</li>
+						<li>for each cirlce, if the integer value of the x coordinate is divisible by 2, color the outline red, otherwise yellow</li>	
+					</ol>
+					
+				</section>
+
+				<section>
+					<h4>six</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800 x 600</li>
+						<li>draw 200 circles with 4px thick outline in random positions within the confines of the canvas</li>
+						<li>for each cirlce, if the integer value of the x coordinate is divisible by 2, color the outline red, otherwise yellow</li>	
+					</ol>
+					
+				</section>
+
+				<section>
+					<h4>seven</h4>
+					<ol>
+						<li>create a canvas with the dimensions 720x360</li>
+						<li>create a grid of 5x5 squares, spaced out evenly at 35px on the x and y axis</li>
+					</ol>
+					
+				</section>
+
+				<section>
+					<h4>eight</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800x600</li>
+						<li>draw a circle with a 4px solid black outline at the center of the canvas</li>
+						<li>expand and detract the radius the circle based on the x position of the mouse</li>
+					</ol>					
+				</section>
+
+				<section>
+					<h4>nine</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800x600</li>
+						<li>set the background color to white</li>
+						<li>draw a circle with a 4px solid black outline at the center of the canvas</li>
+						<li>expand and detract the radius of the circle based on the x position of the mouse</li>
+						<li>increase / decrease the green value of the background color based on the y position of the mouse</li>
+					</ol>					
+				</section>
+
+				<section>
+					<h4>ten</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800x600</li>
+						<li>set the background color to a dark grey</li>
+						<li>put the pen at (0,0)</li>
+						<li>draw a white 1px thick line from current coordinates to a coordinate with the same x and height of the canvas</li>
+						<li>move the pen 2px to the right on the x axis</li>
+						<li>repeat steps 4 to 5 until you reach the width of the canvas</li>
+						<li>increase / decrease the distance between the lines based on the approximity of the mouse to the center of the canvas</li>
+					</ol>		
+				</section>
+
+				<section>
+					<h4>eleven</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800x600</li>
+						<li>set the background color to white</li>
+						<li>put the pen at (0,0)
+						<li>draw a rectangle with the width of 20px from the coordinates (0,0) to (0,height) with the width of 4</li>
+						<li>animate the rectangle along the x axis slowly</li>
+						<li>when the rectangle reaches the far right of the canvas, and exits canvas, it enters from coordinates (0,0) again</li>
+						<li>increase / decrease the speed of the moving rectangle based on the distance of the mouse position from the center of the canvas</li>
+					</ol>		
+				</section>
+
+				<section>
+					<h4>twelve</h4>
+					<ol>
+						<li>create a canvas with the dimensions 800x600</li>
+						<li>set the background color to white</li>
+						<li>click on any point on the screen</li>
+						<li>draw a circle with yellow color and 4px thick black at the point of the click</li>
+						<li>repeat steps 3 - 4 twenty times</li>
+						<li>circles expand and detract based on a slow sine wave function</li>
+						<li>based on the y coordinate of the mouse, the circles pulse faster or slower</li>
+						<li>based ont he x coordinate of the mouse, the circles detract and expand in larger ranges</li>
+					</ol>		
+				</section>
+
+				<section>
+				<h3>
+					Set up your own p5.js environment
+				</h3>
+				<ul>
+					<li>open your code editor</li>
+					<li>create a new file</li>
+					<li>paste the HTML below in the file</li>
+					<li>write your drawing code in the designated area</li>
+					<li>save your file as an HTML file (i.e: my-drawing.html) somewhere</li>
+					<li>open the file in the browser and view your drawing.</li>
+					<li>with every change you can reload the browser and see the changes</li>
+				</ul>
+<pre><code data-trim>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.7/p5.min.js"&gt;&lt;/script&gt;
+  &lt;title&gt;Code as medium example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+// your p5.js code here
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>	
+				</section>
+
+				<section>
+					<h4>Homework</h4>
+					<p>Write the implementation for the pseudo code from session 1. The more you code the better. So make as many sketches as possible. Ask questions!</p>
+				</section>
+
+			</div>
+
+
+
+
+
+
+		</div>
+
+		<script src="../../../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../../../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../../../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../../../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
