@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../../../../bower_components/p5js/lib/p5.min.js"></script>
+	<title>five</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function setup() {
+			
+			
+			createCanvas(800, 600);
+
+			
+			background(0);
+			
+			
+			strokeWeight(4);
+
+			noFill();
+			noLoop();
+		
+		}
+
+		
+		function draw() {	
+			
+			for(var i=0; i < 200; i = i + 1) {
+				
+				var x = random(width);
+				var y = random(height);
+				var roundedX = parseInt(x);
+				
+				if(roundedX % 2 == 0) {
+					stroke(255,255,0);
+					ellipse(x, y, 30, 30);
+				} else {
+					stroke(255,0,0);
+					ellipse(x, y, 30, 30);
+				}
+				
+
+			}			
+
+		}	
+	</script>
+</body>
+</html>
