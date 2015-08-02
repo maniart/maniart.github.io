@@ -47,203 +47,276 @@
 						3. Simulation: The art of imitation	contd.					
 					</p>
 					<small>The New Centre for Research &amp; Practice</small>
-					<small>07.24.2015</small>	
+					<small>08.02.2015</small>	
 				</section>
 
 				<section>
+					<h3>Revisiting recursion</h3>
+					<img style="float:left;" src="assets/for-loop.gif">
+					<img style="float:left; width: 400px;" src="assets/for-loop-code.png">
+				</section>
+
+				<section>
+					<h3>Use your `i`</h3>
 <pre><code data-trim>
-function setup() {
-	// executed once
-	// setup your drawing environment here
-}
-function draw() {
-	// executed repeatedly 
-	// write your drawing code here
+for(var i = 0; i &lt; 10; i = i+1) {
+	// inside your `for` block, in each iteration,
+	// `i` is a different number.
+	// in case of this for loop, `i`:
+	// starts at 0
+	// is incremented by 1
+	// until it reaches 9 (note: not 10, but 9)
+	// so in each iteration, `i` will be:
+	// 0
+	// 1
+	// 2
+	// .
+	// .
+	// .
+	// 9
 }
 </code></pre>
 				</section>
 
 				<section>
-					<h3>
-						Coding time.
-					</h3>
+				<h3>Using your `i` contd.</h3>
+<pre><code data-trim>
+for(var i = 0; i &lt; width; i = i+20) {
+	/* `width` is just a number! (like 10 in previous slide)
+	   `i` is incremented by 20 (you dont have to increment by 1!)
+	   now, let's use `i` to make something recursive happen:
+	*/
+	rect(i, height/2, 10, 10);
+	// draw rectangles at coordinates (i, height/2) with dimensions of 10
+}
+</code></pre>	
+					<a href="http://jsbin.com/sahoxo/2/edit?js,output" target="_blank">See `i` in action.</a>
+				</section>
+
+				<section>
+					<h4>Animation 101</h4>
 					<p>
-						In this section, we will go over a number of simple code examples. There are some pre-written pseudo code examples that we will turn into actual code/drawings 
+						AKA The bouncy ball
+						<br>
+						<a href="http://jsbin.com/nexedu/2/edit?html,js,output" target="_blank">Let's make it.</a>
 					</p>
 				</section>
 
 				<section>
-					<h4>one</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800 x 600</li>
-						<li>the canvas background is a light grey</li>
-						<li>put the pen at coordinates 0,0</li>
-						<li>set your initial (x,y) to (0,0)</li>
-						<li>draw a 4px thick black line from coordinates (x,y) to (width,y)</li>
-						<li>move the pen 20 pixels down along the y axis</li>
-						<li>repeat steps 5 to 6 until (y) is equal to (height)</li>
-					</ol>
+					<h4>Animation 2.0</h4>
+					<p>
+						AKA A lot of bouncy balls
+						<br>
+						<a href="http://jsbin.com/foneqet/2/edit?html,js,output" target="_blank">Let's make it.</a>
+					</p>
 				</section>
 
 				<section>
-					<h4>two</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800 x 600</li>
-						<li>the canvas background is a light grey</li>
-						<li>put the pen at coordinates 0,0</li>
-						<li>set your initial (x,y) to (0,0)</li>
-						<li>draw a 4px thick black line from coordinates (x,y) to (width,y)</li>
-						<li>move the pen 20 pixels down along the y axis</li>
-						<li>repeat steps 5 to 6 until (y) is equal to (height)</li>
-						<li>set your initial (x,y) to (0,0)</li>
-						<li>draw a 4px blue line from coordinates (x,y) to (x, height)</li>
-						<li>move the pen 20 pixels right along the x axis</li>
-						<li>repeat steps 9 to 10 until (x) is equal to width</li>
-					</ol>
+					<h3>Drawing with the mouse</h3>
+					<p>
+						Create a program that follows your mouse position, drawing circles of 5 px diameter.
+						hint: it's silly simple.
+					</p>
+					<a href="http://jsbin.com/yequqa/3/edit?html,js,output" target="_blank">see here.</a>
 				</section>
 
 				<section>
-					<h4>three</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800 x 600</li>
-						<li>the canvas background is a light grey</li>
-						<li>put the pen at coordinates 0,0</li>
-						<li>set your initial (x,y) to (0,0)</li>
-						<li>draw a 4px thick black line from coordinates (x,y) to (width,y)</li>
-						<li>move the pen 20 pixels down along the y axis</li>
-						<li>multiply the thickness of the line by .03 of current y coordinates</li>
-						<li>repeat steps 5 to 6 until (y) is equal to (height)</li>
-					</ol>
-				</section>
-
-				<section>
-					<h4>four</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800 x 600</li>
-						<li>color the background black</li>
-						<li>draw 100 (10 x 10) white rectangles in random positions within the confines of the canvas</li>
-					</ol>
-				</section>
-
-				<section>
-					<h4>five</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800 x 600</li>
-						<li>colro the background black</li>
-						<li>draw 200 circles with 30px diameter with 4px thick outline in random positions within the confines of the canvas</li>
-						<li>for each cirlce, if the integer value of the x coordinate is divisible by 2, color the outline red, otherwise yellow</li>	
-					</ol>
-					
-				</section>
-
-				<section>
-					<h4>six</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800 x 600</li>
-						<li>color background white</li>
-						<li>draw 200 circles with no stroke and black color in random positions within the confines of the canvas</li>
-						<li>connect each circle to its next circle with a .3px thick black line</li>
-					</ol>
-					
-				</section>
-
-				<section>
-					<h4>seven</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800x600</li>
-						<li>color the background black</li>
-						<li>create a grid of 5x5 white squares of 10px wide and tall, spaced out evenly at 35px on the x and y axis</li>
-					</ol>
-					
-				</section>
-
-				<section>
-					<h4>eight</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800x600</li>
-						<li>color the background white</li>
-						<li>draw a circle with a 4px solid black outline at the center of the canvas</li>
-						<li>expand and detract the radius the circle based on the x position of the mouse</li>
-					</ol>					
-				</section>
-
-				<section>
-					<h4>nine</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800x600</li>
-						<li>set the background color to white</li>
-						<li>draw a circle with a 4px solid black outline at the center of the canvas</li>
-						<li>expand and detract the radius of the circle based on the x position of the mouse</li>
-						<li>increase / decrease the green value of the background color based on the y position of the mouse</li>
-					</ol>					
-				</section>
-
-				<section>
-					<h4>ten</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800x600</li>
-						<li>set the background color to a dark grey</li>
-						<li>put the pen at (0,0)</li>
-						<li>draw a white 1px thick line from current coordinates to a coordinate with the same x and height of the canvas</li>
-						<li>move the pen 2px to the right on the x axis</li>
-						<li>repeat steps 4 to 5 until you reach the width of the canvas</li>
-						<li>increase / decrease the distance between the lines based on the approximity of the mouse to the center of the canvas</li>
-					</ol>		
-				</section>
-
-				<section>
-					<h4>eleven</h4>
-					<ol>
-						<li>create a canvas with the dimensions 800x600</li>
-						<li>set the background color to white</li>
-						<li>put the pen at (0,0)
-						<li>draw a black rectangle with the width of 20px from the coordinates (0,0) to (0,height) with the width of 4</li>
-						<li>animate the rectangle along the x axis slowly</li>
-						<li>when the rectangle reaches the far right of the canvas, and exits canvas, it enters from coordinates (0,0) again</li>
-						<li>increase / decrease the speed of the moving rectangle based on the distance of the mouse position from the center of the canvas</li>
-					</ol>		
-				</section>
-
-				<section>
-				<h3>
-					Set up your own p5.js environment
-				</h3>
-				<ul>
-					<li>open your code editor</li>
-					<li>create a new file</li>
-					<li>paste the HTML below in the file</li>
-					<li>write your drawing code in the designated area</li>
-					<li>save your file as an HTML file (i.e: my-drawing.html) somewhere</li>
-					<li>open the file in the browser and view your drawing.</li>
-					<li>with every change you can reload the browser and see the changes</li>
-				</ul>
+					<h3>Vectors</h3>
+					<p>
+						Let's talk about `vector`s:
+						Think of `point`s as `vector`s. Vectors can be two dimensional, or three dimensional. Just like points.
+						In p5.js, creating points are very easy using the function `createVector`. You can either pass 3 numbers to it, creating a point in the 3D space, or
+						pass 2 numbers and create a 2d point:
+					</p>
 <pre><code data-trim>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.7/p5.min.js"&gt;&lt;/script&gt;
-  &lt;title&gt;Code as medium example&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;script&gt;
-// your p5.js code here
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>	
+var myPoint = createVector(0,0);
+</code></pre>
 				</section>
 
 				<section>
-					<h4>Homework</h4>
-					<p>Write the implementation for the pseudo code from session 1. The more you code the better. So make as many sketches as possible. Ask questions!</p>
+					<h3>more vectors...</h3>
+					<p>
+						And then you can access the `x` and `y` coordinates of this point using the the `dot notation` syntax:
+					</p>
+<pre><code data-trim>
+var myPoint = createVector(100,200);
+console.log(myPoint.x); // 100
+console.log(myPoint.y); // 200
+</code></pre>
+					<a href="http://jsbin.com/fefiwu/3/edit?html,js,output" target="_blank">Let's make a quick example with `vector`s</a>
+				</section>
+
+				<section>
+					<h3>more vectors...</h3>
+					<p>
+						Note that `vector`s are nothing magical. They're just simple `Objects` that we saw in session 1. Let's reiterate objects:
+						<img style="height: 400px; width: auto;" src="../session-1/assets/object.gif">
+					</p>
+				</section>
+
+				<section>
+					<h3>Mouse as mode of interaction</h3>
+					<p>
+						p5.js makes it very easy to detect user mouse events such as `click`, `press`, `release`, `drag`, etc.
+						There are functions already implemented in p5.js that allow you to work with these mouse events:
+					</p>
+<pre><code data-trim>
+var mouseX;
+
+var mouseY;
+
+var mouseIsPressed;
+
+function mousePressed() {
+	
+}
+function mouseReleased() {
+	
+}
+function mouseDragged() {
+	
+}
+function mouseMoved() {
+	
+}
+function mouseClicked() {
+	
+}
+function mouseWheel() {
+	
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h3>mouseX</h3>
+					<p>
+						We've already worked with this wonderful variable that reports back to us the exact `x` coordinates of our mouse cursor at any time.
+						<a href="http://p5js.org/reference/#/p5/mouseX" target="_blank">Read more about it here.</a>
+						<a href="http://jsbin.com/qulubi/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>
+
+					</p>
+				</section>
+
+				<section>
+					<h3>mouseY</h3>
+					<p>
+						We've already worked with this wonderful variable that reports back to us the exact `x` coordinates of our mouse cursor at any time.
+						<a href="http://p5js.org/reference/#/p5/mouseY" target="_blank">Read more about it here.</a>
+						<a href="http://jsbin.com/kofavu/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>
+
+					</p>
+				</section>
+
+				<section>
+					<h3>mouseY</h3>
+					<p>
+						We've already worked with this wonderful variable that reports back to us the exact `x` coordinates of our mouse cursor at any time.
+						<a href="http://p5js.org/reference/#/p5/mouseY" target="_blank">Read more about it here.</a>
+						<a href="http://jsbin.com/kofavu/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>
+					</p>
+				</section>
+
+				<section>
+					<h4>mouseIsPressed</h4>
+					<p>This is simply a `Boolean` that tells us at any point in time, if the mouse is currently being pressed.</p>
+					<p style="font-size: .6em;">What the hell was a Boolean, you might ask.</p>		
+				</section>
+
+				<section>
+					<h4>Remembering the Boolean</h4>
+					<p>A variable that takes only 2 values: `true` or `false`</p>
+					<img style="height: 400px; width: auto;" src="../session-1/assets/boolean.gif">
+				</section>
+
+				<section>
+					<h4>mouseIsPressed</h4>
+					<a href="http://p5js.org/reference/#/p5/mouseIsPressed" target="_blank">Read more about it here.</a>
+					<a href="http://jsbin.com/xogepa/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>		
+				</section>
+
+				<section>
+					<h4>mouseReleased</h4>
+					<a href="http://p5js.org/reference/#/p5/mouseReleased" target="_blank">Read more about it here.</a>
+					<a href="http://jsbin.com/waruyo/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>		
+				</section>
+
+				<section>
+					<h4>mouseDragged</h4>
+					<a href="http://p5js.org/reference/#/p5/mouseDragged" target="_blank">Read more about it here.</a>
+					<a href="http://jsbin.com/tohuqi/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>		
+				</section>
+
+				<section>
+					<h4>mouseClicked</h4>
+					<a href="http://p5js.org/reference/#/p5/mouseClicked" target="_blank">Read more about it here.</a>
+					<a href="http://jsbin.com/tefoto/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>		
+				</section>
+
+				<section>
+					<h4>mouseMoved</h4>
+					<a href="http://p5js.org/reference/#/p5/mouseMoved" target="_blank">Read more about it here.</a>
+					<a href="http://jsbin.com/vuhute/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>		
+				</section>
+
+				<section>
+					<h4>mouseWheel</h4>
+					<a href="http://p5js.org/reference/#/p5/mouseWheel" target="_blank">Read more about it here.</a>
+					<a href="http://jsbin.com/goqilu/2/edit?html,js,output" target="_blank">Let's make an example with it.</a>		
+				</section>
+
+				<section>
+					<h4>Vectors + Mouse events = win!</h4>
+					<p>Now let's see how we can use vectors to create points, mediated by our mouse interactions:</p>
+					<a href="http://jsbin.com/behave/1/edit?html,js,output" target="_blank">See it here.</a>		
+				</section>
+
+				<section>
+					<h4>Trick: Leaving a trail</h4>
+					<p>
+						In p5.js, `draw` function runs recursively. You can choose to clear your background in each frame, or not. You can also clear your background with a lower opacity. This can easily give us a "trailing" effect. See:
+					</p>
+					<a href="http://jsbin.com/wiseqo/2/edit?html,js,output" target="_blank">See it here.</a>		
+				</section>
+
+				<section>
+					<h1>Trigonometry, anyone? :)</h4>	
+				</section>
+
+				<section>
+					<h4>Sine and Cosine</h4>
+					<p>
+						Before getting all defensive, let's look how great they look, visualized:
+						<br>
+						<img src="./assets/sine-cosine-1.gif" style="height: 300px; height: auto;">
+					</p>
+							
+				</section>
+
+				<section>
+					<h4>Sine and Cosine</h4>
+					<p>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/WCxXPTtQFm4" frameborder="0" allowfullscreen></iframe>
+
+					</p>			
+				</section>
+
+				<section>
+					<h4>Sine and Cosine</h4>
+					<p>
+						Sine and Cosine are very, very useful functions for animations. All we need to use these functions, is an angle. When you feed Sine or Cosine a linearly-increasing angle, they give you badk non-linearly, oscillating values. Plug these values into your animations and all of a sudden you get super funky easing animations.
+						<a href="http://jsbin.com/zuzoyi/2/edit?html,js,output" target="_blank">Let's play with Sine and Cosine</a>
+					</p>			
+				</section>
+
+				<section>
+					<h4>HomeWork</h4>
+					<p>
+						You can either keep working on the code for the pseudo-code you wrote first session, or create experimental anumations using Sine, Cosine, simple animation tecniques, mouse events, etc. 
+					</p>			
 				</section>
 
 			</div>
-
-
-
-
 
 
 		</div>
