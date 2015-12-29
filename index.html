@@ -1,84 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Hey there.</title>
-	<link rel="stylesheet" type="text/css" href="bower_components/normalize.css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
+---
+layout: default
+---
 
-	<header>
-		<h1>Greetings,</h1>
-			<p>
-				My name is Mani. I write code, make art and teach.
-			</p>
-	</header>
-		
-		
-	<section id="main">
-		<h3>Teaching Materials</h3>
-		<h4>Internet as Platform, Programming as Medium</h4>	
-		<ul>
-			<li>
-				Session 1
-				<ul>
-					<li>
-						<a href="./teaching/thenewcentre/session-1/">Slides</a>	
-					</li>
-					<li>
-						<a href="https://hackpad.com/Internet-as-Platform-Programming-as-Medium-Session-1-ZPclKK4qvO8">Notes</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				Session 2
-				<ul>
-					<li>
-						<a href="./teaching/thenewcentre/session-2/">Slides</a>	
-					</li>
-					<li>
-						<a href="https://hackpad.com/Internet-as-Platform-Programming-as-Medium-Session-2-LWIPnG22lo2">Notes</a>
-					</li>
-					<li>
-						<a href="./teaching/thenewcentre/session-2/sketches/">Sketches</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				Session 3
-				<ul>
-					<li>
-						<a href="./teaching/thenewcentre/session-3/">Slides</a>	
-					</li>
-					<li>
-						<a href="https://hackpad.com/Internet-as-Platform-Programming-as-Medium-Session-3-FAhG3XYLXAL">Notes</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				Session 4
-				<ul>
-					<!-- <li>
-						<a href="./teaching/thenewcentre/session-3/">Slides</a>	
-					</li> -->
-					<li>
-						<a href="https://hackpad.com/Internet-as-Platform-Programming-as-Medium-Session-4-p5dWo8L3p9e">Notes</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
+<div class="home">
 
-		<h4>Un/Real Spaces: Art in the "virtual" realm</h4>
-		<ul>
-			<li>
-				<a href="./teaching/uoregon/">Slides</a>
-			</li>
-			<li>
-				<a href="https://hackpad.com/Ar-lecture-notes-YySJz5Iapj1">Notes</a>
-			</li>
-		</ul>
+  <h1 class="page-heading">Posts</h1>
 
-	</section>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-</body>
-</html>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
