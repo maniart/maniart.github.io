@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../../../bower_components/p5js/lib/p5.min.js"></script>
+	<title>four</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		/*
+			name: setup
+			type: function
+			what it does:
+				use this function to setup your environment. things like creating your canvas,
+				setting your background color, stroke weight for your lines, etc.
+				generally, anything that you think will persist in your entire sketch.
+				things you want to set up once and forget about.
+				this function will run only once. 
+				in other words, p5.js knows to execute this function once.
+				remember, functions are machines that execute tasks.
+				some times they take inputs (parameters) and some time they dont. 
+		*/
+		function setup() {
+			
+			/*
+				name: createCanvas
+				type: function
+				what it does:
+					creates your canvas.
+					takes 2 parameters: `width` and `height` - both in pixels.
+			*/
+			createCanvas(800, 600);
+
+			/*
+			name: background
+			type: function
+			what it does:
+				set your background color. takes 3 parameters defining the `rgb` values of the color. the 3 numbers should be between 0 and 255.
+				you can ALSO only pass 1 parameter to it. if so, that one parameter will be the shade of a grey color.  
+			*/
+			background(0);
+			
+			/*
+			name: strokeWeight
+			type: function
+			what it does:
+				sets the thickness of outlines for all shapes. takes one parameter - a number that defines thickness in pixels.  
+			*/
+			strokeWeight(0);
+
+			/*
+			name: noLoop
+			type: function
+			what it does:
+				prevents `draw` from running recursively.  
+			*/
+			noLoop();
+		
+		}
+
+		
+		function draw() {	
+			
+			/* 
+				`for` loop:
+					this for loop will run 100 times
+
+			*/
+			for(var i=0; i < 100; i = i + 1) {
+				
+				/* 
+					name: x
+					type: number
+					what it does:
+						the `random` function will create a random number between 0 and the number we pass to it.
+						in this case, `random` will produce a random number between 0 and width of the canvas, and then that number is stored in the variable x
+				*/
+				var x = random(width);
+				
+				/* 
+					name: y
+					type: number
+					what it does:
+						the `random` function will create a random number between 0 and the number we pass to it.
+						in this case, `random` will produce a random number between 0 and height of the canvas, and then that number is stored in the variable y
+				*/
+				var y = random(height);
+
+				/* 
+					name: rect
+					type: function
+					what it does:
+						draws a rectangle with the top left corner set at `(x,y)` - which is a random coordinate, width width and height set to 10 pixels
+				*/
+				rect(x, y, 10, 10); 
+			}			
+
+		}	
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../../../bower_components/p5js/lib/p5.min.js"></script>
+	<title>two</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function setup() {
+			
+			
+			createCanvas(800, 600);
+
+			
+			background(200);
+			
+			
+			strokeWeight(4);
+		
+		}
+
+		
+		function draw() {	
+
+			stroke(0,0,0);
+
+			for(var i=0; i < height; i = i + 20) {
+				line(0, i, width, i);  
+			}
+
+			stroke(10, 100, 255);
+			for(var j=0; j < width; j = j + 20) {
+				line(j, 0, j, height);  
+			}
+
+		}	
+	</script>
+</body>
+</html>
