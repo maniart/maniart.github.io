@@ -43,7 +43,7 @@
 			background: url('./assets/dots-bg.png') 0 0 repeat white;
 		}
 		.reveal section {
-			background: rgba(244, 221, 71, 1);
+			background: rgba(244, 221, 71, .5);
 		}
 		.reveal section p,
 		.reveal section h1,
@@ -95,6 +95,24 @@
 				</section>
 
 				<section>
+					<h3>The Structure of this Presentation</h3>
+					<ul>
+						<li>
+							History
+						</li>
+						<li>
+							Intro to a select subset of features, categorized topically <br> When possible, I pair the before / after syntax
+						</li>
+						<li>
+							How can we use ES6 today?
+						</li>
+						<li>
+							Resources &amp; Credits
+						</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>History</h3>
 					<ul>
 						<li>1995: JavaScript is born as LiveScript</li>
@@ -107,39 +125,247 @@
 				</section>
 
 				<section>
-					<h3>The Structure of this Presentation</h3>
-					<ul>
+					<h3>Featured features. (Haha)
+							<br>
+							<small style="font-size: .3em;">
+								<a href="http://es6-features.org/" target="_blank">
+									go here for full list
+								</a>
+							</small>
+					</h3>
+					<ol>
 						<li>
-							List of all new features
+							Syntax
 						</li>
 						<li>
-							Intro to a select subset of features. <br> When possible, I pair the before / after syntax
+							Organization
 						</li>
 						<li>
-							How can we use ES6 today?
+							Async Flow Control
 						</li>
 						<li>
-							Resources
+							API Additions
 						</li>
-					</ul>
+						<li>
+							Meta Programming
+						</li>
+					</ol>
 				</section>
 
 				<section>
-					<h3>List of all ES6
-							<small style="font-size: .3em;">*Bold ones will be introduced</small>
-					</h3>
-					<ul>
-						<li>
-							How can we use ES6 today?
-						</li>
-						<li>
-							List of all new features
-						</li>
-						<li>
-							Intro to a select subset of features. <br> When possible, I pair the before / after syntax
-						</li>
-					</ul>
+					<h3>1. Syntax</h3>
 				</section>
+
+				<section>
+					<h4>Block-Scoped variables</h4>
+					<p>
+						Traditionally in JS, only functions create scope using `var`. ES6 introduces `let` and `const`, block scoped variables.
+					</p>
+<pre><code data-trim>
+var a = 2;
+
+(function IIFE(){
+    var a = 3;
+    console.log( a );   // 3
+})();
+
+console.log( a );       // 2
+</code></pre>
+
+<pre><code data-trim>
+let i = 55;
+
+for(let i = 0; i < 10; i++) {
+	console.log(i); // 0 1 2 3 4 5 6 7 8 9
+}
+
+console.log(i); // 55
+</code></pre>
+
+<pre><code data-trim>
+const foo = 'abc';
+foo = 'def'; // TypeError
+</code></pre>
+		</section>
+		<section>
+	<p>
+		For `const`, the value is not frozen or immutable because of const, just the assignment of it. If the value is complex, such as an object or array, the contents of the value can still be modified:
+	</p>
+<pre><code data-trim>
+const a = [1,2,3];
+a.push( 4 );
+console.log( a ); // [1,2,3,4]
+a = 42; // TypeError
+</code></pre>
+				</section>
+
+				<section>
+					<h4>Spread/Rest</h4>
+					<p>
+						ES6 introduces a new `...` operator that's typically referred to as the spread or rest operator, depending on where/how it's used.
+						<br> In ES5 we would do:
+					</p>
+<pre><code data-trim>
+function foo(x,y,z) {
+    console.log( x, y, z );
+}
+foo.apply( null, [1,2,3] ); // 1 2 3
+</code></pre>
+				<p>
+					In ES6 we can simply:
+				</p>
+
+<pre><code data-trim>
+foo( ...[1,2,3] ); // 1 2 3
+</code></pre>
+		</section>
+
+		<section>
+			<p>
+				But `...` can be used to spread out/expand a value in other contexts as well, such as inside another array declaration.
+				<br>ES5:
+			</p>
+<pre><code data-trim>
+var a = [2,3,4];
+var b = [1].concat(a, [5]); // [1,2,3,4,5]
+</code></pre>
+			<p>
+				ES6:
+			</p>
+<pre><code data-trim>
+var a = [2,3,4];
+var b = [ 1, ...a, 5 ];
+
+console.log( b ); // [1,2,3,4,5]
+</code></pre>
+		</section>
+
+		<section>
+	<p>
+		Instead of spreading a value out, the `...` can gather a set of values together into an array.
+	</p>
+<pre><code data-trim>
+function foo(x, y, ...z) {
+    console.log( x, y, z );
+}
+
+foo( 1, 2, 3, 4, 5 ); // 1 2 [3,4,5]
+</code></pre>
+				<p>
+					Which means that you can gather your `arguments` if they are unnamed
+				</p>
+<pre><code data-trim>
+function foo(...args) {
+    console.log( args );
+}
+
+foo( 1, 2, 3, 4, 5); // [1,2,3,4,5]
+</code></pre>
+				</section>
+
+				<section>
+					<h4>Default Parameter Values</h4>
+					<p>
+						One of the most common idioms in JavaScript relates to setting a default value for a function parameter.
+						<br>
+						ES5:
+					</p>
+<pre><code data-trim>
+function foo(x,y) {
+  x = x || 11;
+  y = y || 31;
+
+  console.log( x + y );
+}
+
+foo(); // 42
+foo( 5, 6 ); // 11
+foo(0, 42); // 53 -- YIKES!
+</code></pre>
+
+	<p>
+		ES6:
+	</p>
+
+<pre><code data-trim>
+function foo(x = 11, y = 31) {
+    console.log( x + y );
+}
+
+foo(); // 42
+foo( 5, 6 ); // 11
+foo( 0, 42 ); // 42 -- WOOT!
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>Default Value Expressions</h4>
+					<p>
+						Function default values can be more than just simple values like 31; they can be any valid expression, even a function call:
+					</p>
+<pre><code data-trim>
+function foo(x = y + 3, z = bar( x )) {
+    console.log( x, z );
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h4>Destructuring</h4>
+					<p>
+						Simply put: structured assignments
+						<br>
+						ES5:
+					</p>
+<pre><code data-trim>
+function foo() {
+  return [1,2,3];
+}
+
+var tmp = foo(),
+  a = tmp[0], b = tmp[1], c = tmp[2];
+
+console.log( a, b, c ); // 1 2 3
+</code></pre>
+				<p>
+					ES6:
+				</p>
+<pre><code data-trim>
+var [ a, b, c ] = foo();
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						Same is true about Orrays
+						<br>
+						ES5:
+					</p>
+<pre><code data-trim>
+function bar() {
+  return {
+      x: 4,
+      y: 5,
+      z: 6
+  };
+}
+
+var tmp = bar(),
+  x = tmp.x, y = tmp.y, z = tmp.z;
+
+console.log( x, y, z ); // 4 5 6
+</code></pre>
+				<p>
+					ES6:
+				</p>
+<pre><code data-trim>
+var { x: x, y: y, z: z } = bar();
+</code></pre>
+
+				</section>
+
 
 				<section>
 					<h3>The Structure of this Presentation</h3>
