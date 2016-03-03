@@ -30,8 +30,8 @@
 		<![endif]-->
 	</head>
 	<style type="text/css">
-		ol, ol li, ul li {
-			font-size: .8em!important;
+		ol, ol li, ul li, p {
+			font-size: .7em!important;
 			box-shadow: 0;
 		}
 		.reveal section img {
@@ -366,15 +366,1014 @@ var { x: x, y: y, z: z } = bar();
 
 				</section>
 
+				<section>
+					<h4>Object Property Assignment Pattern</h4>
+					<p>
+						If the property name being matched is the same as the variable you want to declare, you can actually shorten the syntax:
+					</p>
+<pre><code data-trim>
+var { x, y, z } = bar();
+
+console.log( x, y, z ); // 4 5 6
+</code></pre>
+				<p>
+					This is great. But when you need to assign a prop name to a different variable name, you can use the verbose syntax:
+				</p>
+<pre><code data-trim>
+var { x: bam, y: baz, z: bap } = bar();
+
+console.log( bam, baz, bap ); // 4 5 6
+console.log( x, y, z ); // ReferenceError
+</code></pre>
+
+				</section>
 
 				<section>
-					<h3>The Structure of this Presentation</h3>
+					<p>
+							In fact, the assignment expressions (a, y, etc.) don't actually need to be just variable identifiers. Anything that's a valid assignment expression is allowed. For example:
+					</p>
 <pre><code data-trim>
+var o = {};
 
+[o.a, o.b, o.c] = foo();
+( { x: o.x, y: o.y, z: o.z } = bar() );
+
+console.log( o.a, o.b, o.c ); // 1 2 3
+console.log( o.x, o.y, o.z ); // 4 5 6
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>Object Property Assignment Pattern</h4>
+					<p>
+						If the property name being matched is the same as the variable you want to declare, you can actually shorten the syntax:
+					</p>
+<pre><code data-trim>
+var { x, y, z } = bar();
+
+console.log( x, y, z ); // 4 5 6
+</code></pre>
+				<p>
+					This is great. But when you need to assign a prop name to a different variable name, you can use the verbose syntax:
+				</p>
+<pre><code data-trim>
+var { x: bam, y: baz, z: bap } = bar();
+
+console.log( bam, baz, bap ); // 4 5 6
+console.log( x, y, z ); // ReferenceError
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>Default Value Assignment</h4>
+					<p>
+						Both forms of destructuring can offer a default value option for an assignment, using the = syntax similar to the default function argument values discussed earlier.
+					</p>
+<pre><code data-trim>
+var [ a = 3, b = 6, c = 9, d = 12 ] = foo();
+var { x = 5, y = 10, z = 15, w = 20 } = bar();
+
+console.log( a, b, c, d ); // 1 2 3 12
+console.log( x, y, z, w ); // 4 5 6 20
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>Destructuring Parameters</h4>
+					<p>
+						In the following ES5 snippet, 42 is implicitly assigned to `x`
+					</p>
+<pre><code data-trim>
+function foo(x) {
+    console.log( x );
+}
+
+foo( 42 );
+</code></pre>
+				<p>
+					Which means that we should be able to destructure that assignment. Which we can!
+					<br>
+					ES6:
+				</p>
+<pre><code data-trim>
+function foo( [ x, y ] ) {
+    console.log( x, y );
+}
+
+foo( [ 1, 2 ] ); // 1 2
+foo( [ 1 ] ); // 1 undefined
+foo( [] ); // undefined undefined
+</code></pre>
+				</section>
+
+				<section>
+					<h4></h4>
+					<p>
+						Object destructuring works too:
+					</p>
+<pre><code data-trim>
+function foo( { x, y } ) {
+    console.log( x, y );
+}
+
+foo( { y: 1, x: 2 } ); // 2 1
+foo( { y: 42 } ); // undefined 42
+foo( {} ); // undefined undefined
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>
+						Object Literal Extensions
+					</h4>
+					<p>
+						ES6 adds a number of important convenience extensions to the humble { .. } object literal.
+						<br>
+						ES5:
+					</p>
+<pre><code data-trim>
+var x = 2, y = 3,
+	o = {
+	    x: x,
+	    y: y
+	};
+</code></pre>
+				<p>
+					Consice props in ES6:
+				</p>
+<pre><code data-trim>
+var x = 2, y = 3,
+  o = {
+      x,
+      y
+  };
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						Same is true with methods
+						<br>
+						ES5:
+					</p>
+<pre><code data-trim>
+var o = {
+    x: function(){
+        // ..
+    },
+    y: function(){
+        // ..
+    }
+}
+</code></pre>
+				<p>
+					Consice methods in ES6:
+				</p>
+<pre><code data-trim>
+var o = {
+    x() {
+        // ..
+    },
+    y() {
+        // ..
+    }
+}
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>Setting [[Prototype]]</h4>
+					<p>
+						This has been a non-standard feature of many JS engines, which in ES6 is now standard.
+
+					</p>
+<pre><code data-trim>
+var o1 = {
+    // ..
+};
+
+var o2 = {
+    __proto__: o1,
+    // ..
+};
+</code></pre>
+				<p>
+					ES6 also offers a utility for this:
+				</p>
+<pre><code data-trim>
+Object.setPrototypeOf( o2, o1 );
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>Object super</h4>
+					<p>
+super is typically thought of as being only related to classes. However, due to JS's classless-objects-with-prototypes nature, super is equally effective, and nearly the same in behavior, with plain objects' concise methods.
+					</p>
+<pre><code data-trim>
+var o1 = {
+    foo() {
+        console.log( "o1:foo" );
+    }
+};
+
+var o2 = {
+    foo() {
+        super.foo();
+        console.log( "o2:foo" );
+    }
+};
+
+Object.setPrototypeOf( o2, o1 );
+
+o2.foo();       // o1:foo o2:foo
+</code></pre>
+
+
+				</section>
+
+				<section>
+					<h4>Template Literals</h4>
+					<p>
+						ES5:
+					</p>
+<pre><code data-trim>
+var name = "Kyle";
+
+var greeting = "Hello " + name + "!";
+
+console.log( greeting ); // "Hello Kyle!"
+console.log( typeof greeting ); // "string"
+</code></pre>
+<p>
+	ES6:
+</p>
+<pre><code data-trim>
+var name = "Kyle";
+
+var greeting = `Hello ${name}!`;
+
+console.log( greeting );            // "Hello Kyle!"
+console.log( typeof greeting );     // "string"
+</code></pre>
+
+
+				</section>
+
+				<section>
+					<p>
+						Backtick delimiter also allows for multi-line text:
+						<br>
+						ES5:
+					</p>
+<pre><code data-trim>
+var text = 'Now is the time for all good men' +
+	'to come to the aid of their' +
+	'country!'; // Ugh
+
+</code></pre>
+<p>
+	ES6:
+</p>
+<pre><code data-trim>
+var text =
+`Now is the time for all good men
+to come to the aid of their
+country!`; // Yay
+
+</code></pre>
+
+
+				</section>
+
+				<section>
+					<p>
+						This makes interpolated expressions happen too!
+
+					</p>
+<pre><code data-trim>
+function upper(s) {
+    return s.toUpperCase();
+}
+
+var who = "reader";
+
+var text =
+`A very ${upper( "warm" )} welcome
+to all of you ${upper( `${who}s` )}!`;
+
+console.log( text );
+// A very WARM welcome
+// to all of you READERS!
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>Arrow Functions</h4>
+					<p>
+						Let's first illustrate what an arrow function looks like, as compared to normal functions:
+					</p>
+<pre><code data-trim>
+function foo(x,y) {
+    return x + y;
+}
+
+// versus
+
+var foo = (x,y) => x + y; // Implicit return
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						Other usecases:
+					</p>
+<pre><code data-trim>
+var f1 = () => 12;
+var f2 = x => x * 2;
+var f3 = (x,y) => {
+    var z = x * 2 + y;
+    y++;
+    x *= 3;
+    return (x + y + z) / 2;
+};
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						Arrow functions for functional code:
+					</p>
+<pre><code data-trim>
+var a = [1,2,3,4,5];
+
+a = a.map( v => v * 2 );
+
+console.log( a ); // [2,4,6,8,10]
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						Arrow functions save the scope!
+						<br>
+						ES5:
+					</p>
+<pre><code data-trim>
+var controller = {
+    makeRequest: function(..){
+        var self = this;
+
+        btn.addEventListener( "click", function(){
+            // ..
+            self.makeRequest(..);
+        }, false );
+    }
+};
+</code></pre>
+				<p>
+					ES6:
+				</p>
+<pre><code data-trim>
+var controller = {
+    makeRequest: function(..){
+        btn.addEventListener( "click", () => {
+            // ..
+            this.makeRequest(..);
+        }, false );
+    }
+};
+</code></pre>
+				<p>
+
+Lexical this in the arrow function callback in the previous snippet now points to the same value as in the enclosing makeRequest(..) function. In other words, => is a syntactic stand-in for var self = this.
+				</p>
+
+				</section>
+
+				<section>
+					<h4>for..of Loops</h4>
+					<p>
+						Joining the for and for..in loops from the JavaScript we're all familiar with, ES6 adds a for..of loop, which loops over the set of values produced by an iterator.
+					</p>
+<pre><code data-trim>
+var a = ["a","b","c","d","e"];
+
+for (var idx in a) {
+    console.log( idx );
+}
+// 0 1 2 3 4
+
+for (var val of a) {
+    console.log( val );
+}
+// "a" "b" "c" "d" "e"
+</code></pre>
+				<p>
+					in ES5, we would have to do the following:
+				</p>
+<pre><code data-trim>
+var a = ["a","b","c","d","e"],
+    k = Object.keys( a );
+
+for (var val, i = 0; i < k.length; i++) {
+    val = a[ k[i] ];
+    console.log( val );
+}
+// "a" "b" "c" "d" "e"
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>Symbols</h4>
+					<p>
+						A new primitive type has been added to JavaScript: the symbol.
+					</p>
+<pre><code data-trim>
+// create a symbol
+var sym = Symbol( "some optional description" );
+
+typeof sym;     // "symbol"
+</code></pre>
+				<p>
+					Some things to note:
+					<ul>
+						<li>
+						A symbol is a unique and immutable data type and may be used as an identifier for object properties.
+					</li>
+						<li>
+							You cannot and should not use new with Symbol(..). It's not a constructor, nor are you producing an object.
+						</li>
+						<li>
+The parameter passed to Symbol(..) is optional. If passed, it should be a string that gives a friendly description for the symbol's purpose.
+						</li>
+						<li>
+							The typeof output is a new value ("symbol") that is the primary way to identify a symbol.
+						</li>
+						<li>
+							You can use symbols as identifiers when adding properties to an object.
+</li>
+					</ul>
+				</p>
+
+
+				</section>
+
+				<section>
+					<p>
+						Using symbols as keys is where symbols become interesting. Because symbols are unique, a symbol can create a unique property inside an object. You never have to worry about conflicting with existing methods, or being accidently overwritten.
+					</p>
+<pre><code data-trim>
+let firstName = Symbol();
+
+let person = {
+    lastName: "Allen",
+    [firstName]: "Scott",
+};
+
+let names = [];
+for(var p in person) {
+    names.push(p);
+}
+
+expect(names.length).toBe(1); // Symbol keys are ignored in all iterables
+expect(names[0]).toBe("lastName");
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						"Well Known" Symbols are those that come built-in with ES6 like:
+					</p>
+					<ul>
+
+						<li>
+							Symbol.iterator
+						</li>
+					</ul>
+<pre><code data-trim>
+[1,2,3][Symbol.iterator]; // [Function: values]
+</code></pre>
+
+				</section>
+
+				<section>
+					<h3>2. Organization</h3>
+				</section>
+
+				<section>
+					<h4>Iterators</h4>
+					<p>
+						Iterators are a way of organizing ordered, sequential, pull-based consumption of data.
+						<br>
+						An iterator is a structured pattern for pulling information from a source in one-at-a-time fashion.
+						<br>
+						<br>
+						Examples:
+						<ul>
+							<li>
+								A utility that produces a new unique identifier each time it's requested
+							</li>
+							<li>
+								Attach an iterator to a database query result to pull out new rows one at a time.
+							</li>
+						</ul>
+						<br>
+						<p>
+								Many of the built-in data structures in JavaScript will now expose an iterator implementing this standard. And you can also construct your own iterators adhering to the same standard, for maximal interoperability.
+						</p>
+
+				</section>
+
+
+
+				<section>
+					<p>
+						Interface:
+					</p>
+<pre><code data-trim>
+Iterator [required]
+    next() {method}: retrieves next IteratorResult
+</code></pre>
+				<p>
+
+					There are two optional members that some iterators are extended with:
+
+
+				</p>
+<pre><code data-trim>
+Iterator [optional]
+    return() {method}: stops iterator and returns IteratorResult
+    throw() {method}: signals error and returns IteratorResult
+</code></pre>
+				<br>
+				<p>
+					The IteratorResult interface is specified as:
+				</p>
+<pre><code data-trim>
+IteratorResult
+    value {property}: current iteration value or final return value
+        (optional if `undefined`)
+    done {property}: boolean, indicates completion status
 </code></pre>
 				</section>
 
 
+
+				<section>
+					<p>
+						Example Usecase:
+					</p>
+<pre><code data-trim>
+var arr = [1,2,3];
+
+var it = arr[Symbol.iterator]();
+
+it.next(); // { value: 1, done: false }
+it.next(); // { value: 2, done: false }
+it.next(); // { value: 3, done: false }
+
+it.next(); // { value: undefined, done: true }
+
+var greeting = "hello world";
+
+var it = greeting[Symbol.iterator]();
+
+it.next();      // { value: "h", done: false }
+it.next();      // { value: "e", done: false }
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>
+						Generators
+					</h4>
+					<p>
+						Functions that do not run to completion. `yield` is used to incrementally execute the function.
+					</p>
+<pre><code data-trim>
+function *foo() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+function *bar() {
+    yield *foo();
+}
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						Early completion:
+					</p>
+<pre><code data-trim>
+function *foo() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+var it = foo();
+
+it.next();              // { value: 1, done: false }
+
+it.return( 42 );        // { value: 42, done: true }
+
+it.next();              // { value: undefined, done: true }
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						Async application of generators:
+					</p>
+<pre><code data-trim style="max-height: 500px;">
+function request(url) {
+    // `it.next(..)` is the generator's iterator-resume call
+    makeAjaxCall( url, function(response){
+        it.next( response );
+    } );
+    // Note: nothing returned here!
+}
+
+function *main() {
+    var result1 = yield request( "http://some.url.1" );
+    var data = JSON.parse( result1 );
+
+    var result2 = yield request( "http://some.url.2?id=" + data.id );
+    var resp = JSON.parse( result2 );
+    console.log( "The value you asked for: " + resp.value );
+}
+
+var it = main();
+it.next(); // get it all started
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						Async application of generators:
+					</p>
+<pre><code data-trim style="max-height: 500px;">
+function request(url) {
+    // `it.next(..)` is the generator's iterator-resume call
+    makeAjaxCall( url, function(response){
+        it.next( response );
+    } );
+    // Note: nothing returned here!
+}
+
+function *main() {
+    var result1 = yield request( "http://some.url.1" );
+    var data = JSON.parse( result1 );
+
+    var result2 = yield request( "http://some.url.2?id=" + data.id );
+    var resp = JSON.parse( result2 );
+    console.log( "The value you asked for: " + resp.value );
+}
+
+var it = main();
+it.next(); // get it all started
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>
+						Modules
+					</h4>
+					<p>
+						1991 called. they wanted their language feature back.
+						<br>
+						The Old Way:
+					</p>
+<pre><code data-trim style="max-height: 500px;">
+function Hello(name) {
+    function greeting() {
+        console.log( "Hello " + name + "!" );
+    }
+
+    // public API
+    return {
+        greeting: greeting
+    };
+}
+
+var me = Hello( "Kyle" );
+me.greeting();          // Hello Kyle!
+</code></pre>
+<p>CommonJS: (NodeJS Style) </p>
+<pre><code data-trim style="max-height: 500px;">
+// salute.js
+var MySalute = "Hello";
+module.exports = MySalute;
+
+// main.js
+var salute = require('./salute.js');
+</code></pre>
+
+				</section>
+
+				<section>
+					<p>
+						ES6 Modules - Export
+					</p>
+<pre><code data-trim style="max-height: 500px;">
+export function foo() {
+    // ..
+}
+
+export var awesome = 42;
+
+var bar = [1,2,3];
+export { bar };
+
+//or
+function foo(..) {
+    // ..
+}
+
+export default foo;
+
+//or
+function foo(..) {
+    // ..
+}
+export { foo as default };
+
+//or
+export default function foo(..) {
+    // ..
+}
+
+</code></pre>
+
+
+				</section>
+
+				<section>
+					<p>
+						ES6 Modules - Import
+					</p>
+<pre><code data-trim style="max-height: 500px;">
+import { foo, bar, baz } from "foo";
+//or
+import { foo } from "foo";
+//or
+import { foo as theFooFunc } from "foo";
+// or
+import "foo";
+</code></pre>
+
+
+				</section>
+
+				<section>
+					<h4>Classes</h4>
+
+					<p>
+						Syntactic sugar for Prototypcal Inheritence
+						<br>
+						ES5:
+					</p>
+<pre><code data-trim style="max-height: 500px;">
+function Foo(a,b) {
+    this.x = a;
+    this.y = b;
+}
+
+Foo.prototype.gimmeXY = function() {
+    return this.x * this.y;
+}
+</code></pre>
+<p>ES6:</p>
+<pre><code data-trim style="max-height: 500px;">
+class Foo {
+    constructor(a,b) {
+        this.x = a;
+        this.y = b;
+    }
+
+    gimmeXY() {
+        return this.x * this.y;
+    }
+}
+</code></pre>
+
+
+				</section>
+
+				<section>
+					<p>
+						Extend and Super
+
+					</p>
+<pre><code data-trim style="max-height: 500px;">
+class Bar extends Foo {
+    constructor(a,b,c) {
+        super( a, b );
+        this.z = c;
+    }
+
+    gimmeXYZ() {
+        return super.gimmeXY() * this.z;
+    }
+}
+
+var b = new Bar( 5, 15, 25 );
+
+b.x;                        // 5
+b.y;                        // 15
+b.z;                        // 25
+b.gimmeXYZ();               // 1875
+</code></pre>
+
+
+
+				</section>
+
+				<section>
+					<p>
+						`static`
+
+					</p>
+<pre><code data-trim style="max-height: 600px;">
+class Foo {
+    static cool() { console.log( "cool" ); }
+    wow() { console.log( "wow" ); }
+}
+
+class Bar extends Foo {
+    static awesome() {
+        super.cool();
+        console.log( "awesome" );
+    }
+    neat() {
+        super.wow();
+        console.log( "neat" );
+    }
+}
+Foo.cool();                 // "cool"
+Bar.cool();                 // "cool"
+Bar.awesome();              // "cool          // "awesome"
+var b = new Bar();
+b.neat();                   // "wow 					// "neat"
+b.awesome;                  // undefined
+b.cool;                     // undefined
+</code></pre>
+
+
+
+				</section>
+
+				<section>
+					<h3>3. Async Flow Control</h3>
+				</section>
+
+				<section>
+					<p>
+						 Promises are not about replacing callbacks. Promises provide a trustable intermediary -- that is, between your calling code and the async code that will perform the task -- to manage callbacks.
+						 Promises can be chained together, which can sequence a series of asychronously completing steps. Together with higher-level abstractions like the all(..) method (in classic terms, a "gate") and the race(..) method (in classic terms, a "latch"), promise chains provide a mechanism for async flow control.
+
+					</p>
+
+				</section>
+
+				<section>
+				<p>
+					Callback Style:
+				</p>
+<pre><code data-trim style="max-height: 600px;">
+function ajax(url,cb) {
+    // make request, eventually call `cb(..)`
+}
+
+// ..
+
+ajax( "http://some.url.1", function handler(err,contents){
+    if (err) {
+        // handle ajax error
+    }
+    else {
+        // handle `contents` success
+    }
+} );
+</code></pre>
+
+				</section>
+				<section>
+
+				<p>
+				Promise:
+				</p>
+<pre><code data-trim style="max-height: 600px;">
+ajax( "http://some.url.1" )
+.then(
+    function fulfilled(contents){
+        return ajax(
+            "http://some.url.2?v=" + contents
+        );
+    },
+    function rejected(reason){
+        return ajax(
+            "http://backup.url.3?err=" + reason
+        );
+    }
+)
+.then( function fulfilled(contents){
+    // `contents` comes from the subsequent
+    // `ajax(..)` call, whichever it was
+} );
+</code></pre>
+
+
+
+				</section>
+
+				<section>
+
+				<p>
+				Promise:
+				</p>
+<pre><code data-trim style="max-height: 600px;">
+function updatePriority(abTest) {
+  ABTestService
+    .get({ abTestId: abTest.ab_test_id })
+    .$promise
+    .then(function(response) {
+      return response.item;
+    })
+    .then(function(resource) {
+      return ABTestService.update({ abTestId: resource.abTest.abTestId }, resource);
+    })
+    .then(function(response) {
+      $log.log('Priority Updated ', response);
+    })
+    .catch(function(err) {
+      $log.error(err);
+    });
+}
+</code></pre>
+
+
+
+				</section>
+
+				<section>
+					<h3>4. Collections</h3>
+
+				</section>
+
+				<section>
+					<h4>Maps</h4>
+					<p>
+						In JS, we use Objects to create objects-as-maps. The drawback is the inability to use a non-string value as the key.
+					</p>
+<pre><code data-trim style="max-height: 600px;">
+let map = new Map();
+
+map.set('foo', 123);
+map.get('foo');
+map.set(NaN, 123);
+</code></pre>
+
+				</section>
+
+				<section>
+					<h4>TypedArrays</h4>
+<pre><code data-trim style="max-height: 600px;">
+var buf = new ArrayBuffer( 32 );
+buf.byteLength;                         // 32
+</code></pre>
+				<p>
+					buf is now a binary buffer that is 32-bytes long (256-bits), that's pre-initialized to all 0s. A buffer by itself doesn't really allow you any interaction exception for checking its byteLength property.
+					<br>
+					 Several web platform features use or return array buffers, such as FileReader#readAsArrayBuffer(..), XMLHttpRequest#send(..), and ImageData (canvas data).
+				</p>
+				</section>
+
+				<section>
+					<h4>Thank you!</h4>
+				</section>
 
 			</div>
 
