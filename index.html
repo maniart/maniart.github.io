@@ -1,23 +1,119 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hey there.</title>
+	<link rel="stylesheet" type="text/css" href="./teaching/bower_components/normalize.css/normalize.css">
+	<style media="screen">
+		body {
+			font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+			padding: 20px;
+			background: white;
+			color: black;
+		}
+		hr {
+			border: 1px solid black;
+		}
+		h3 {
+			border: 3px solid black;
+			padding: 5px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
 
-<div class="home">
+	<header>
+		<h1>Greetings!</h1>
+			<p>
+				My name is Mani. <br>
+				I write code at <a href="http://yieldmo.com" target="_blank">Yieldmo</a>, <br>
+				<a href="http://maninilchiani.com" target="_blank">make art</a>, <br>
+				<a href="http://soundcloud.com/maninilchiani" target="_blank">play music</a>, <br>
+				and teach every now and then.
+			</p>
+	</header>
 
-  <h1 class="page-heading">Posts</h1>
+	<br>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+	<section id="main">
+		<h3>Teaching Materials</h3>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+		<h4>&gt; A brief intro to ES6 Features. March 2016 @ Yieldmo</h4>
+		<ul>
+			<li>
+				<a href="./teaching/yieldmo-es6/">Slides</a>
+			</li>
+		</ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+		<h4>&gt; Un/Real Spaces: Art in the virtual realm. Spring 2016 @ University of Oregon</h4>
+		<ul>
+			<li>
+				<a href="./teaching/uoregon/">Slides</a>
+			</li>
+			<li>
+				<a href="https://hackpad.com/Ar-lecture-notes-YySJz5Iapj1">Notes</a>
+			</li>
+		</ul>
 
-</div>
+		<h4>&gt; Internet as Platform, Programming as Medium. Summer 2015 @ The New Centre for Reseach &amp; Practice</h4>
+		<ul>
+			<li>
+				Session 1
+				<ul>
+					<li>
+						<a href="./teaching/thenewcentre/session-1/">Slides</a>
+					</li>
+					<li>
+						<a href="https://hackpad.com/Internet-as-Platform-Programming-as-Medium-Session-1-ZPclKK4qvO8">Notes</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				Session 2
+				<ul>
+					<li>
+						<a href="./thenewcentre/session-2/">Slides</a>
+					</li>
+					<li>
+						<a href="https://hackpad.com/Internet-as-Platform-Programming-as-Medium-Session-2-LWIPnG22lo2">Notes</a>
+					</li>
+					<li>
+						<a href="./teaching/thenewcentre/session-2/sketches/">Sketches</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				Session 3
+				<ul>
+					<li>
+						<a href="./teaching/thenewcentre/session-3/">Slides</a>
+					</li>
+					<li>
+						<a href="https://hackpad.com/Internet-as-Platform-Programming-as-Medium-Session-3-FAhG3XYLXAL">Notes</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				Session 4
+				<ul>
+					<!-- <li>
+						<a href="./thenewcentre/session-3/">Slides</a>
+					</li> -->
+					<li>
+						<a href="https://hackpad.com/Internet-as-Platform-Programming-as-Medium-Session-4-p5dWo8L3p9e">Notes</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h4>&gt; Web 3 : JavaScript. Spring 2014 @ Parsons The New School for Design</h4>
+		<ul>
+			<li>
+				<a href="https://github.com/web3js/animated-octo-hipster">Slides and code examples</a>
+			</li>
+		</ul>
+
+	</section>
+
+</body>
+</html>
