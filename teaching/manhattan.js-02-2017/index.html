@@ -6,7 +6,7 @@
 
 		<title>Eyeo 2016 Show &amp; Tell</title>
 
-		<meta name="description" content="diffy.js, Eyeo Festival">
+		<meta name="description" content="diffy.js, manhattan.js">
 		<meta name="author" content="Mani Nilchiani">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/night.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
@@ -41,178 +41,271 @@
 					<h3>diffy.js</h3>
 					<small>Manhattan.js</small>
 					<br>
-					<small>02.08.2017</small>
+					<small>Mani Nilchiani - 02.08.2017</small>
 				</section>
 
 				<section>
-					<h3>This presentation:</h3>
+					<h3> 👋 </h3>
+
 					<ul>
-						<li>Installation: Interactivity &amp; Motion</li>
-						<li>Browser as platform: JS &#128155; Art</li>
-						<li>diffy.js [working title]</li>
+						<li>I write code at Yieldmo</li>
+						<li>I make art when not doing that</li>
+						<li>I make sounds when not doing either</li>
+						<li>I typically have no idea WTF I'm doing</li>
+						<li>OK enough about me.</li>
+					</ul>
+
+				</section>
+
+
+				<section>
+					<h3> 🗒️ Talk Structure </h3>
+					<ul>
+						<li>Writing software for art</li>
+						<li>Making tools for art</li>
+						<li>Browser as platform</li>
+						<li>Diffy.js</li>
+						<li>👶 My first OSS</li>
+						<li>🎥 Demo time</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>Teh/YC</h3>
-					<h5>Dumbo arts festival 2012 NYC</h5>
+					<h3>1. Writing software for art</h3>
+					<h5>Procedural thinking, Interaction Design</h5>
 				</section>
 
 				<section>
-					<a href="https://vimeo.com/61157372" target="_blank">
-						<img src="./assets/tehyc.jpg">
-					</a>
+					<h5>Vera Molnar</h5>
+					<img width="700px" src="./assets/molnar-portrait.png">
 				</section>
 
 				<section>
-					<h3>Tool: OpenFrameworks [C++]</h3>
-					<h5>Pros</h5>
+					<img width="600px" src="./assets/molnar-1.png">
+				</section>
+
+				<section>
+					<img width="600px" src="./assets/molnar-2.png">
+				</section>
+
+				<section>
+					<h5>Manfred Mohr</h5>
+					<img width="700px" src="./assets/mohr-portrait.png">
+				</section>
+
+				<section>
+					<img width="600px" src="./assets/mohr-1.png">
+				</section>
+
+				<section>
+					<img width="600px" src="./assets/mohr-2.png">
+				</section>
+
+				<section>
+					<h5>Camille Utterback</h5>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/toWFvXHghDk" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h5>Golan Levin &amp; collaborators</h5>
+					<iframe src="https://player.vimeo.com/video/111951283?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h3>2. Making tools for art</h3>
+					<h5>Much like making your own brush 🖌️</h5>
+					<small>P.S You will love the tool you built. No matter how shitty it is.</small>
+				</section>
+
+				<section>
+					<h5>Processing, OpenFrameworks, P5.js</h5>
+					<p>High level utils + addon echosystems</p>
+					<img style="float:left;" width="300px" src="./assets/processing.png">
+					<img style="float:left;" width="300px" src="./assets/of.png">
+					<img style="float:left;" width="300px" src="./assets/p5.png">
+				</section>
+
+				<section>
+					<h3>3. Browser as platform</h3>
+					<h5>The sky is the limit!</h5>
+					<small>OK, Call Stack is the limit.</small>
+				</section>
+
+				<section>
+					<h5>The Night</h5>
+					<small>Fullscreen that browser, hook up a webcam, projec it.</small>
+					<iframe src="https://player.vimeo.com/video/77043086" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h3>4. diffy.js</h3>
+					<h5>Quick and dirty motion detection:</h5>
 					<ul>
-						<li>Compiled executable</li>
-					</ul>
-					<h5>Cons</h5>
-					<ul>
-						<li>Compiled executable</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>The Night</h3>
-					<h5>Dumbo arts festival, 2013 NYC</h5>
-				</section>
-
-				<section>
-					<a href="https://vimeo.com/77043085" target="_blank">
-						<img src="./assets/night.png">
-					</a>
-				</section>
-
-				<section>
-					<h3>Tool: Browser, JavaScript</h3>
-					<h5>Pros</h5>
-					<ul>
-						<li>Portable, universal</li>
-					</ul>
-					<h5>Cons</h5>
-					<ul>
-						<li>Performance</li>
+						<li>
+							Where did motion happen?
+						</li>
+						<li>
+							How much?
+						</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>Placemaking</h3>
-					<h5>Tehran Architecture Biennial, 2016 Tehran</h5>
-				</section>
-
-				<section>
-					<img src="./assets/placemaking.jpg">
-				</section>
-
-				<section>
-					<img src="./assets/placemaking-2.jpg">
-				</section>
-
-				<section>
-					<h3>Diffy.js</h3>
-					<p>
-						Inferring movement by differntiating two consecutive frames of a video stream.
-					</p>
-				</section>
-
-				<section>
-					<h5>Diagram</h5>
-					<img src="./assets/diagram-1.png" style="border: none; width: 1200px; height: auto;">
-				</section>
-
-				<section>
-					<h3>Demo time ✧･ﾟ: *✧･ﾟ:* 　　 *:･ﾟ✧*:･ﾟ✧</h3>
-				</section>
-
-				<section>
-					<h5>Optimizations: Workers</h5>
-					<img src="./assets/diagram-2.png" style="border: none; width: 1200px; height: auto;">
-				</section>
-
-				<section>
-					<h5>Optimizations: Workers</h5>
+					<h5>API</h5>
 <pre><code data-trim>
-// main.js
-differ.addEventListener('message', drawBlendImage);
-differ.postMessage({
-  buffer: buffer,
-  data1: data1,
-  data2: data2,
-  sensitivity: .5,
-  width: blendWidth,
-  height: blendHeight
-});
+import { create } from 'diffyjs';
 
-// differ.js (worker)
-this.addEventListener('message', createDiffBuffer);
-this.postMessage(buffer);
+const diffy = create({
+  resolution: { x: 15, y: 10 },
+  sensitivity: 0.2,
+  threshold: 25,
+  debug: true,
+  containerClassName: 'my-diffy-container',
+  sourceDimensions: { w: 130, h: 100 },
+  onFrame: (matrix) => { /* good things */ }
+});
 </code></pre>
 				</section>
 
 				<section>
-					<h5>Optimizations: Bitwise</h5>
+					<img width="800px" src="./assets/diagram-1.png">
+				</section>
+
+				<section>
+					<h5>Worker</h5>
 <pre><code data-trim>
-// Math.abs
-function abs(value) {
-  return (value ^ (value >> 31)) - (value >> 31);
+compare(frame1, frame2) {
+  const data1 = frame1.data;
+  const data2 = frame2.data;
+  const length = data1.length;
+  const buffer = new ArrayBuffer(length);
+
+  this.worker.postMessage({
+    buffer,
+    data1,
+    data2,
+    sensitivity: this.sensitivity,
+    threshold: this.threshold,
+    width: this.sourceWidth,
+    height: this.sourceHeight
+  });
 }
 </code></pre>
 				</section>
 
 				<section>
-					<h5>Optimizations: Typed Arrays</h5>
+					<img width="800px" src="./assets/diagram-2.png">
+				</section>
+
+				<section>
+					<h5>ArrayBuffer and TypedArray</h5>
+					<small>🤔 I wonder what unsigned integers clamped at 255 can represent </small>
 <pre><code data-trim>
-// main.js
-blendImageData
+drawBlendImageFromBuffer(buffer) {
+  this.blendImageData
     .data
     .set(
-      new Uint8ClampedArray(messageEvent.data)
+      new Uint8ClampedArray(buffer)
     );
+
+  this.blendCanvasCtx.putImageData(this.blendImageData, 0, 0);
+  this.previousImageData = this.currentImageData;
+}
+
 </code></pre>
 				</section>
 
 				<section>
-					<h5>Optimizations: Bit Shifting</h5>
+					<h5>Bitwise</h5>
+					<small>😄 [Bit]wise guy, eh?</small>
 <pre><code data-trim>
-var data = new Uint32Array(buffer);
-data[i] =
-  (255   << 24) |    // alpha
-  (delta << 16) |    // blue
-  (delta <<  8) |    // green
-   delta;           // red
+
+// bitwise Math.round
+export const round = (number) => (number + .5) >> 0;
+
+// butwise Math.abs
+export const abs = (value) => (value ^ (value >> 31)) - (value >> 31);
+
 </code></pre>
 				</section>
 
 				<section>
-					<h5>Plans</h5>
-					<ul>
-						<li>clean up</li>
-						<li>+ bower</li>
-						<li>+ npm</li>
-					</ul>
+					<h5>Up Next!</h5>
+					<small>🙄 React. What else did you expect?</small>
+<pre><code data-trim>
+import Diffy from 'diffy-react'
+
+&lt;Diffy
+  resolution = {{ x: 15, y: 10 }}
+  sensitivity = { 0.2 },
+  threshold = { 25 },
+  debug = {true },
+  containerClassName = "my-diffy-container"
+  sourceDimensions = {{ w: 130, h: 100 }}
+  onFrame = { (matrix) => { /* good things */}} /&gt;
+
+
+</code></pre>
 				</section>
 
 				<section>
-					<h5>Github :)</h5>
-					<p>
-						<a href="https://github.com/maniart/diffy" target="_blank">Diffy.js on Github</a>
-					</p>
+					<h5>GPU FTW ... Also For The Math</h5>
+					<small>🐵 MaiaVictor / WebMonkeys</small>
+<pre><code data-trim>
+// Creates a WebMonkeys object
+const monkeys = require("WebMonkeys")(); // on the browser, call WebMonkeys() instead
+
+// Sends an array of numbers to the GPU
+monkeys.set("nums", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]);
+
+// Employs 16 monkeys to work in parallel on the task of squaring each number
+monkeys.work(16, "nums(i) := nums(i) * nums(i);");
+
+// Receives the result back
+console.log(monkeys.get("nums"));
+
+// output: [ 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256 ]
+</code></pre>
 				</section>
 
 				<section>
-					<h5>Thank you!</h5>
-					<p>
-						<a href="http://maninilchiani.com" target="_blank">Mani Nilchiani</a>
-						<br>
-						<a href="https://twitter.com/mani_art" target="_blank">@mani_art</a>
-						<br>
-						<a href="mailto:hello@maninilchiani.com">hello@maninilchiani.com</a>
-					</p>
+					<h3>5. 👶 My first OSS</h3>
+					<small>Where intense insecurity and glory collide.</small>
 				</section>
+
+				<section>
+					<h5>Documentation</h5>
+					<small>Nothing is obvious</small>
+					<p>🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️</p>
+					<p>☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕</p>
+					<p>🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️</p>
+					<p>☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕</p>
+					<p>🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️</p>
+					<p>☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕</p>
+					<p>🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️</p>
+					<p>☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕</p>
+					<p>🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️</p>
+					<p>☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕</p>
+				</section>
+
+				<section>
+					<h5>Obsession</h5>
+					<div style="width: 800px; margin: 0 auto;">
+						<img style="float: left; width:200px;" src="./assets/bell.png" />
+						<img style="float: left; width:200px;" src="./assets/star.png" />
+						<img style="float: left; width: 300px;" src="./assets/npm.png" />
+					</div>
+
+				</section>
+
+				<section>
+					<h3>6. 🎥 Demo Time!</h3>
+					<p>Thank you!</p>
+					<p>Mani Nilchiani, Fb. 2017</p>
+					<a href="http://mani.io">mani.io</a>
+				</section>
+
+
 
 			</div>
 
