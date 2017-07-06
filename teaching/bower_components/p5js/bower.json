@@ -11,12 +11,5 @@
     "p5",
     "processing"
   ],
-  "license": "LGPL",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "license": "LGPL"
 }

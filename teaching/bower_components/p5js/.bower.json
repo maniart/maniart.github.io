@@ -12,22 +12,14 @@
     "processing"
   ],
   "license": "LGPL",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "version": "0.4.7",
-  "_release": "0.4.7",
+  "version": "0.4.24",
+  "_release": "0.4.24",
   "_resolution": {
     "type": "version",
-    "tag": "0.4.7",
-    "commit": "ba817e5c500f24040411cad23cafeaa9f2e81910"
+    "tag": "0.4.24",
+    "commit": "e21db6534b111bc099a0bc23a8896369b812193d"
   },
-  "_source": "git://github.com/lmccart/p5.js.git",
+  "_source": "https://github.com/lmccart/p5.js-release.git",
   "_target": "~0.4.7",
-  "_originalSource": "p5js",
-  "_direct": true
+  "_originalSource": "p5js"
 }
