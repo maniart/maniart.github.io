@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Sufi Mysticism &amp; Prototypal Inheritence @ Queens.js</title>
+
+		<meta name="description" content="queens.js Prototypal Inheritence">
+		<meta name="author" content="Mani Nilchiani">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<style type="text/css">
+			img {
+				border: none!important;
+			}
+		</style>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h3>Sufi Mysticism &amp; Prototypal Inheritance</h3>
+					<small>Queens.js</small>
+					<br>
+					<small>Mani Nilchiani - 09.06.2017</small>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>👋 Oh hai!</h3>
+					<ul>
+						<li>I write code at Architizer</li>
+						<li>When not doing that, I make art and write tunes</li>
+						<li>I typically live in varying degrees of cluelessness regarding all of the above</li>
+					</ul>
+
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>About this talk</h3>
+					<ul>
+						<li>Not <em>necessarily</em> a JS talk.</li>
+						<li>A work-in-progress interdisciplinary comparative study between inheritence models in programming as solutions for object oriented world building and a lineage of theological and philosophical phenomenology</li>
+					</ul>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Why tho?</h3>
+					<ul>
+						<li>I am super into Persian poetry. (It has saved my life multiple times in the past. No joke)</li>
+						<li>This art form and its hermeneutics has, over centuries turned into a rich, universal vessel for philosophy, ethics, drama &amp; theology and the manifestation of Iranian collective history</li>
+					</ul>
+					<img style="float: left; border: none; margin-left: 25px;" src="./assets/divan.jpg">
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Hafez of Shiraz</h3>
+					<p>
+						Khwāja Shams-ud-Dīn Muḥammad Ḥāfeẓ-e Shīrāzī (Persian: خواجه شمس‌‌الدین محمد حافظ شیرازی‎‎), known by his pen name Hafez (حافظ Ḥāfeẓ 'the memorizer; the (safe) keeper'; 1315-1390), was a Persian poet who "lauded the joys of love and wine but also targeted religious hypocrisy."
+						<br>
+						<small>from Wikipedia</small>
+					</p>
+					<img style="" src="./assets/hafez.jpg">
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Hafez of Shiraz</h3>
+					<img src="./assets/tomb.jpg">
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Hafez of Shiraz</h3>
+					<img style="max-height: 800px;" src="./assets/illumination.jpg">
+				</section>
+
+				<section>
+					<h6>A sample verse</h6>
+					<p>حافط خلوت نشین دوش به میخانه شد <br> از سر پیمان گذشت با سر پیمانه شد</p>
+					<small>
+						<p>
+							Last night, Hafiz who spent his days in solitude, made his way to the winehouse
+							<br>	
+							Breaking his promise, he took a chalice of wine.
+						</p>
+					</small>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Neat.</h3>
+					<p>
+						So he was doing a dry month but messed up, or maybe gave into peer pressure.
+						<br>
+						Quite possible.
+					</p>
+					</small>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Really tho?</h3>
+					<p>
+						Could there be another layer to this?
+						<br>
+						Also quite possible, and that's what we are discussing today.
+					</p>
+					</small>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Let's take a step back</h3>
+					<p style="text-align: left;">
+						In researching this, I realzed that the paradigms we use to describe and organize our code has deep roots in how have described and hypothesize our existence
+					</p>
+					<ul style="text-align: left; float: left;">
+						<li>Theology [Sufi Mysticism]</li>
+						<li>Philosophy [Pluto's Theory of Form]</li>
+						<li>Psychoanalysis [Jung's Archetypes, inheritence and collective subconscious]</li> 
+						<li>Metaphysics [Object Oriented Ontology]</li>
+					</ul>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Plato's theory of Form (~ 400 BC)</h3>
+					<p>
+						Plato's argument that non-physical (but substantial) forms (or ideas) represent the most accurate reality. 
+					</p>
+<pre><code>
+					                +------------+
+					                | Abstract   |
+					                | Blueprint  |
+					                | [Class]    |
+					                |            |
+					                +-----+------+
+					                      |
+					                      |
+					                      |
+					       +-----------------------------+
+					       |              |              |
+					       v              v              v
+					+------+-----+  +-----+-------+  +---+--------+
+					|Solid       |  | Solid       |  | Solid      |
+					|Instance    |  | Instance    |  | Instance   |
+					|[Object]    |  | [Object]    |  | [Object]   |
+					+------------+  +-------------+  +------------+
+</code></pre>
+
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Plato's theory of Form contd.</h3>
+					<ul style="float: left;">
+						<li>
+							Hierarchical (vertical)
+						</li>
+						<li>
+							Object Oriented
+						</li>	
+						<li>
+							Abstract (Blueprint)
+						</li>
+						<li>
+							Phenomenological (Doesn't mingle much with theology)
+						</li>
+					</ul>
+<pre style="font-size: 1em!important; float: left;"><code>
+Class Human {
+  // Ideal implementation details
+}
+
+const Adam = new Human([...config]);
+const Eve = new Human([...config]);
+</code></pre>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Philo of Alexandria (1st Century)</h3>
+					<p>Hellenistic Jewish philosopher, towards hermeneutics in reading the biblical text</p>
+					<img style="max-height: 400px;" src="./assets/philo.png">
+				</section>
+
+				<section>
+					<h3>Philo of Alexandria (1st Century)</h3>
+					<ul style="float: left;">
+						<li>
+							Intorduces hermeneutics &amp; Object Oriented world view to Abrahamic theology
+						</li>
+						<li>
+							Describes two types of Human:
+							<ul>
+								<li>
+									One prototype that exists in Heavens
+								</li>
+								<li>
+									One which inherits from that and exists on Earth
+								</li>
+							</ul>
+						</li>	
+						<li>
+							Object (Concrete, not Abstract)
+						</li>
+						<li>
+							Theological
+						</li>
+					</ul>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Philo of Alexandria (1st Century) Contd.</h3>
+
+<pre style="float:left;"><code>
+			 +------------+
+			 |            |
+			 |    GOD     |
+			 |            |
+			 +-----+------+
+			       |
+			       |
+			       |
+			       |
+			       v
+			+------+------+
+			|             |
+			| Prototypal  |
+			| Man         |
+			| [Heavens]   |
+			+-------------+
+			      |
+			      |
+			      |
+			      |
+			      v
+			+-----+-------+
+			|             |
+			| Earthly     |
+			| Man         |
+			| [Object]    |
+			+-------------+
+</code></pre>
+				</section>
+
+				<section>
+					<h3>Philo of Alexandria (1st Century) Contd.</h3>
+
+<pre style="float:left;"><code>
+  // Invoked by God. Returns a singleton Object
+  const Human = humanFactory();
+
+  // create the rest of humanity from this human
+  const person_1 = Object.create(Human);
+  const person_n = Object.create(Human);
+</code></pre>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Muslim Sufi Mystics</h3>
+					<p>Borrowing heavily from Jewish mysitcism, they continue on the tradition of the Human Prototype.</p>
+					<p>
+						Muslim philosophers, Sufi mystics and their hermeneutics of Qoran vs. verbatim traditionalism. They reject the duality of the prototype proposed by Philo, and brings mand and god even one step closer. [code, diagram] Sufi mystics "read between the lines", and derive a different narrative. They dismiss the eternal sin, and redefine the man-god relationship as a rather horizontal one: It is not a journey of repent and attonment, but one of passion, longing and a quest for a reunion. In their worldview, they elevate man from a sinner's place to a heroic explorer looking for their way back home. 
+					</p>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>Muslim Sufi Mystics</h3>
+					<p>
+						This belief system is farther removed from the verbatim Quranic text, and delves deeper into the realm of hermeneutics. It sees the prototype of Human at the highest elevations in heaven, since it was the only being curious and brave enough to do the unthinkable. In this scenario, man does not "fall" from heaven, but rather embarks upon a long journey that only he, the most gifted and brave of beings can handle, and he will return home, because he is created from God himself, with no intermediary objects.
+					</p>
+				</section>
+
+				<section style="font-size: .6em!important;">
+					<h3>وَنَفَخْتُ فِيهِ مِنْ رُوحِي</h3>
+					<h3>And I blew in him from my own soul</h3>
+					<small>Quran, سورة ص</small>
+				</section>
+
+				<section>
+					<h3>So, basically:</h3>
+
+<pre style="float:left;"><code>
+const God = { /* Divine traits &amp; properties */ }
+const Human = Object.create(God);
+</code></pre>
+				</section>
+
+				<section>
+					<h3>No middleman, straight borrowing of traits from God.</h3>
+					<p>The playing field is leveled, if Human reaches enlightenment, he will find god within himself.</p>
+					<p>God impatiently waits until Human is aware of his prototype and reaches this realization.</p>
+<pre style="float:left;"><code>
++------------+
+|            |            +--------------+
+|            |            |              |
+|  GOD       +----------->|  Human       |
+|            |            |              |
+|            |            +--------------+
++------------+
+</code></pre>
+				</section>
+
+				<section>
+					<h3>No middleman, straight borrowing of traits from God.</h3>
+					<p>The playing field is leveled, if Human reaches enlightenment, he will find god within himself.</p>
+					<p>God impatiently waits until Human is aware of his prototype and reaches this realization.</p>
+<pre style="float:left;"><code>
++------------+
+|            |            +--------------+
+|            |            |              |
+|  GOD       +----------->|  Human       |
+|            |            |              |
+|            |            +--------------+
++------------+
+</code></pre>
+				</section>
+
+
+			</div>
+
+
+
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
