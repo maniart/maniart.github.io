@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Mani @ Google</title>
+
+		<meta name="description" content="developer advocate, google, mani">
+		<meta name="author" content="Mani Nilchiani">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h3>Mani @ Google: <br> Developer Advocate Presentation</h3>
+					<br>
+					<small>Mani Nilchiani - 03.29.2018</small>
+				</section>
+
+				
+				<section>
+					<h3> 👋 Nice to meet you</h3>
+				</section>
+
+				<section style="
+					background-image: url('./assets/arc.jpg');
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: 0 0;
+					height: 100%;
+					width: 100%;
+				">
+					<h4 style="color: black;">
+						I'm a Software Engineer at Architizer
+					</h4>
+				</section>
+
+				<section style="
+					background-image: url('./assets/art.jpg');
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: 0 0;
+					height: 100%;
+					width: 100%;
+				">
+					<h4 style="color: black;">
+						I make Software Art
+					</h4>
+				</section>
+
+				<section style="
+					background-image: url('./assets/music.jpg');
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: 0 0;
+					height: 100%;
+					width: 100%;
+				">
+					<h4 style="color: white;">
+						And play music
+					</h4>
+				</section>
+
+				<section>
+					<h3>Talk Structure</h3>
+					<ol>
+						<li>Software for artistic expression</li>
+						<li>Making tools for art</li>
+						<li>Browser as platform</li>
+						<li>Diffy.js</li>
+						<li>My first OSS Project</li>
+						<li>Quick Demo</li>
+						<li>Dark Patterns VR</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>1. Writing software for art</h3>
+					<h5>Procedural thinking, Interaction Design</h5>
+				</section>
+
+				<section>
+					<h5>Vera Molnar</h5>
+					<img width="700px" src="./assets/molnar-portrait.png">
+				</section>
+
+				<section>
+					<img width="600px" src="./assets/molnar-1.png">
+				</section>
+
+				<section>
+					<img width="600px" src="./assets/molnar-2.png">
+				</section>
+
+				<section>
+					<h5>Manfred Mohr</h5>
+					<img width="700px" src="./assets/mohr-portrait.png">
+				</section>
+
+				<section>
+					<img width="600px" src="./assets/mohr-1.png">
+				</section>
+
+				<section>
+					<img width="600px" src="./assets/mohr-2.png">
+				</section>
+
+				<section>
+					<h5>Camille Utterback</h5>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/toWFvXHghDk" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h5>Golan Levin &amp; collaborators</h5>
+					<iframe src="https://player.vimeo.com/video/111951283?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h3>2. Making tools for art</h3>
+					<h5>Much like making your own brush 🖌️</h5>
+					<small>P.S You will love the tool you built. No matter how flawed it is.</small>
+				</section>
+
+				<section>
+					<h5>Processing, OpenFrameworks, P5.js</h5>
+					<p>High level utils + addon echosystems</p>
+					<img style="float:left;" width="300px" src="./assets/processing.png">
+					<img style="float:left;" width="300px" src="./assets/of.png">
+					<img style="float:left;" width="300px" src="./assets/p5.png">
+				</section>
+
+				<section>
+					<h3>3. Browser as platform</h3>
+					<h5>The sky is the limit!</h5>
+					<small>OK, Call Stack is the limit.</small>
+				</section>
+
+				<section>
+					<h5>The Night</h5>
+					<small>Fullscreen that browser, hook up a webcam, projec it.</small>
+					<iframe src="https://player.vimeo.com/video/77043086" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h3>4. diffy.js</h3>
+					<h5>Quick and dirty motion detection:</h5>
+					<ul>
+						<li>
+							Where did motion happen?
+						</li>
+						<li>
+							How much?
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h5>API</h5>
+<pre><code data-trim>
+import { create } from 'diffyjs';
+
+const diffy = create({
+  resolution: { x: 15, y: 10 },
+  sensitivity: 0.2,
+  threshold: 25,
+  debug: true,
+  containerClassName: 'my-diffy-container',
+  sourceDimensions: { w: 130, h: 100 },
+  onFrame: (matrix) => { /* good things */ }
+});
+</code></pre>
+				</section>
+
+				<section>
+					<img width="800px" src="./assets/diagram-1.png">
+				</section>
+
+				<section>
+					<h5>Worker</h5>
+<pre><code data-trim>
+compare(frame1, frame2) {
+  const data1 = frame1.data;
+  const data2 = frame2.data;
+  const length = data1.length;
+  const buffer = new ArrayBuffer(length);
+
+  this.worker.postMessage({
+    buffer,
+    data1,
+    data2,
+    sensitivity: this.sensitivity,
+    threshold: this.threshold,
+    width: this.sourceWidth,
+    height: this.sourceHeight
+  });
+}
+</code></pre>
+				</section>
+
+				<section>
+					<img width="800px" src="./assets/diagram-2.png">
+				</section>
+
+				<section>
+					<h5>ArrayBuffer and TypedArray</h5>
+					<small>🤔 I wonder what unsigned integers clamped at 255 can represent </small>
+<pre><code data-trim>
+drawBlendImageFromBuffer(buffer) {
+  this.blendImageData
+    .data
+    .set(
+      new Uint8ClampedArray(buffer)
+    );
+
+  this.blendCanvasCtx.putImageData(this.blendImageData, 0, 0);
+  this.previousImageData = this.currentImageData;
+}
+
+</code></pre>
+				</section>
+
+				<section>
+					<h5>Bitwise</h5>
+					<small>😄 [Bit]wise guy, eh?</small>
+<pre><code data-trim>
+
+// bitwise Math.round
+export const round = (number) => (number + .5) >> 0;
+
+// butwise Math.abs
+export const abs = (value) => (value ^ (value >> 31)) - (value >> 31);
+
+</code></pre>
+				</section>
+
+				<section>
+					<h5>Up Next!</h5>
+					<small>🙄 React. What else did you expect?</small>
+<pre><code data-trim>
+import Diffy from 'diffy-react'
+
+&lt;Diffy
+  resolution = {{ x: 15, y: 10 }}
+  sensitivity = { 0.2 },
+  threshold = { 25 },
+  debug = {true },
+  containerClassName = "my-diffy-container"
+  sourceDimensions = {{ w: 130, h: 100 }}
+  onFrame = { (matrix) => { /* good things */}} /&gt;
+
+
+</code></pre>
+				</section>
+
+				<section>
+					<h5>GPU FTW ... Also For The Math</h5>
+					<small>🐵 MaiaVictor / WebMonkeys</small>
+<pre><code data-trim>
+// Creates a WebMonkeys object
+const monkeys = require("WebMonkeys")(); // on the browser, call WebMonkeys() instead
+
+// Sends an array of numbers to the GPU
+monkeys.set("nums", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]);
+
+// Employs 16 monkeys to work in parallel on the task of squaring each number
+monkeys.work(16, "nums(i) := nums(i) * nums(i);");
+
+// Receives the result back
+console.log(monkeys.get("nums"));
+
+// output: [ 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256 ]
+</code></pre>
+				</section>
+
+				<section>
+					<h3>5. 👶 My first OSS</h3>
+					<small>Where intense insecurity and glory collide.</small>
+					<p>
+						Code is only half the work.<br>Documentation is what makes or breaks good software. <br>So I got to work.
+					</p>
+				</section>
+
+				
+				<section style="
+					background-image: url('./assets/diffy-readme.png');
+					background-repeat: no-repeat;
+					background-size: contain;
+					background-position: center 0;
+					height: 100%;
+					width: 100%;
+				">
+				</section>
+
+				<section>
+					<h3>6. 🎥 Demo Time</h3>
+				</section>
+
+				<section>
+					<h5>On doing &amp; Un-doing (Installation)</h5>
+					<img style="border: none;" width="700px" src="./assets/ondoing.gif">
+				</section>
+
+				<section>
+					<img style="border: none;" width="700px" src="./assets/ondoing-2.jpg">
+				</section>
+
+				<section>
+					<h5>You-Eye</h5>
+					<a href="https://mani.io/you-eye/locality/" target="_blank">
+						<img width="700px" src="./assets/locality-motion.gif">
+					</a>
+				</section>
+
+				<section>
+					<h3>7. Dark Patterns VR</h3>
+					<p>
+						An interactive WebVR narrative about the future<br> of surveillance and privacy
+						<br>
+						<br>
+						<small>A collaboration with <a href="http://carolinesinders.com" target="_blank">Caroline Sinders</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>The Premise</h3>
+					<p>
+						We hypothesized the future of <br> the regulated Web and interconnected life
+					</p>
+					<img width="700px" src="./assets/dp-screenshot-1.jpg">
+				</section>
+
+				<section>
+					<h3>Inspirations</h3>
+					<img width="700px" src="./assets/hockney-1.jpg">
+				</section>
+
+				<section>
+					<h3>Inspirations</h3>
+					<img width="700px" src="./assets/hockney-2.jpg">
+				</section>
+
+				<section>
+					<h3>Art</h3>
+					<img width="700px" src="./assets/dp-spread.png">
+				</section>
+
+				<section>
+					<h3>Design</h3>
+					<img width="700px" src="./assets/dp-sketch.jpg">
+				</section>
+
+				<section>
+					<h3>Installation</h3>
+					<img width="700px" src="./assets/dp-install-1.jpg">
+				</section>
+
+				<section>
+					<h3>Gameplay</h3>
+					<img width="700px" src="./assets/dp-1.gif">
+				</section>
+
+				<section>
+					<h3>Gameplay</h3>
+					<img width="700px" src="./assets/dp-2.gif">
+				</section>
+
+				<section>
+					<h3>Technique</h3>
+					<img width="700px" src="./assets/logos.png">
+				</section>
+
+
+			</div>
+
+
+
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
