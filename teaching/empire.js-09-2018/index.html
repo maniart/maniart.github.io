@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Empire.js 2018</title>
+
+		<meta name="description" content="diffy.js, empire.js">
+		<meta name="author" content="Mani Nilchiani">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../bower_components/reveal.js/css/theme/white.css" id="theme">
+
+		<style type="text/css">
+			/* override text styles to monospace */
+			body {
+				border-top: 20px solid #6b4fff!important;
+			}
+			.reveal h1,
+			.reveal h2,
+			.reveal h3,
+			.reveal h4,
+			.reveal h5,
+			.reveal h6,
+			.reveal ul {
+				font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+				letter-spacing: -4px;
+				text-decoration: underline;
+				width: 100%;
+			}
+			.reveal p,
+			.reveal small {
+				font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+				letter-spacing: -4px;
+			}
+			.reveal a {
+				color: #6b4fff;
+				border-bottom: 2px solid #6b4fff; 
+			}
+			.reveal a:hover {
+				background-color: #6b4fff;
+				color: white; 
+			}
+			.reveal ul {
+				text-decoration: none;
+				letter-spacing: 0.01em;
+			}
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+			}
+			.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
+				border-left-color: #6b4fff;
+			}
+			.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
+				border-right-color: #6b4fff;
+			}
+			.reveal small {
+				font-size: 0.4em;
+				letter-spacing: -1px;
+			}
+			.wasm {
+				color: #6b4fff!important;
+			}
+			.font-small {
+				font-size: 0.7em!important;
+			}
+			.reveal .progress span {
+				background-color: #6b4fff!important;
+			}
+			.left {
+				float: left;
+				text-align: left;
+			}
+			.border-wasm {
+				border-bottom: 10px solid #6b4fff!important;
+				border-left: 5px solid #6b4fff!important; 
+				border-top: 1px solid #6b4fff!important; 
+				border-right: 1px solid #6b4fff!important; 
+			}
+			.credit {
+				float: left;
+				clear: both;
+			}
+			.clearfix {
+				clear: both!important;
+			}
+			.no-margin {
+				margin: 0!important;
+			}
+		</style>
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="../bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h3>Webassembly for performant interactivity</h3>
+					<div style="text-align: center;">
+						<img 
+							style="width: 200px;" 
+							src="./assets/wasm-logo.png">
+					</div>
+					<br>
+					<br>
+					<small>Mani Nilchiani, Empire.js 2018</small>
+				</section>
+
+				<section>
+					<h3 class="wasm left"> Hello! </h3>
+					<ul class="font-small left">
+						<li>Blurb</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Structure of this talk</h3>
+					<ul class="font-small left">
+						<li>Software art</li>
+						<li>Making tools</li>
+						<li>Browser as platform</li>
+						<li>Diffy.js</li>
+						<li>Performance improvements</li>
+						<li>Going low-level</li>
+						<li>From Rust to JS via WASM</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Software art</h3>
+					<p class="left font-small">Procedural thinking, Interaction Design</p>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Vera Molnar</h3>
+					<img height="500px" class="left border-wasm" src="./assets/molnar-portrait.png">
+				</section>
+
+				<section>
+					<img height="500px" src="./assets/molnar-1.png">
+				</section>
+
+				<section>
+					<img height="500px" src="./assets/molnar-2.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Manfred Mohr</h3>
+					<img height="500px" class="left border-wasm" src="./assets/mohr-portrait.png">
+				</section>
+
+				<section>
+					<img height="500px" src="./assets/mohr-1.png">
+				</section>
+
+				<section>
+					<img height="500px" src="./assets/mohr-2.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Camille Utterback</h3>
+					<img height="500px" class="border-wasm left" src="./assets/camille.jpg">
+				</section>
+
+				<section>
+					<img height="500px" src="./assets/text-rain.gif">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Golan Levin &amp; Collaborators</h3>
+					<img class="left border-wasm" height="500px" src="./assets/golan.jpeg">
+				</section>
+
+				<section>
+					<img height="500px" src="./assets/mesa-di-voce.gif">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Posenet</h3>
+					<img class="left border-wasm" height="500px" src="./assets/posenet.gif">
+					<small class="credit"><a href="https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5">Source</a></small>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Making tools for art</h3>
+					<img class="left" height="500px" src="./assets/tools-logos.jpg">
+					<small class="credit">
+						[clockwise from the top] 
+						<a href="http://processing.org">Processing</a>
+						<a href="http://openframeworks.cc">OpenFrameworks</a>
+						<a href="https://p5js.org/">P5.js</a>
+					</small>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Diffy.js</h3>
+					<img class="left" height="200px" src="./assets/diffy-logo.jpg">
+					<small class="credit">Motion detection for the browser <a href="https://github.com/maniart/diffyjs">Repo</a></small>
+				</section>
+
+				<section>
+					<h3 class="wasm left">What Diffy does</h3>
+					<img class="left border-wasm" height="500" src="./assets/undoing.gif">
+					<small class="credit">"On doing and un-doing" <a href="https://mani.io/portfolio/on-doing-and-un-doing/">About</a></small>
+				</section>
+
+				<section>
+					<h3 class="wasm left">What Diffy does contd.</h3>
+					<img class="left border-wasm" height="500" src="./assets/undoing-2.jpg">
+					<small class="credit">"On doing and un-doing" <a href="https://mani.io/portfolio/on-doing-and-un-doing/">About</a></small>
+				</section>
+
+				<section>
+					<h3 class="wasm left">What Diffy does contd.</h3>
+					<img class="left border-wasm" height="500" src="./assets/game.gif">
+					<small class="credit">Point it out <a href="https://point-it-out.herokuapp.com/home">Launch</a></small>
+				</section>
+
+				<section>
+				<h3 class="wasm left">What Diffy does contd.</h3>
+<pre class="border-wasm clearfix no-margin"><code data-trim>
+import { create } from 'diffyjs';
+
+const diffy = create({
+  resolution: { x: 15, y: 10 },
+  sensitivity: 0.2,
+  threshold: 25,
+  debug: true,
+  containerClassName: 'my-diffy-container',
+  sourceDimensions: { w: 130, h: 100 },
+  onFrame: (matrix) => { /* stuff */ }
+});
+</code></pre>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Diagram time</h3>
+					<img class="left border-wasm" height="500" src="./assets/diagram.png">
+				</section>
+
+<section>
+				<h3 class="wasm left">Worker</h3>
+<pre class="border-wasm clearfix no-margin"><code data-trim>
+compare(frame1, frame2) {
+  const data1 = frame1.data;
+  const data2 = frame2.data;
+  const length = data1.length;
+  const buffer = new ArrayBuffer(length);
+
+  this.worker.postMessage({
+    buffer,
+    data1,
+    data2,
+    sensitivity: this.sensitivity,
+    threshold: this.threshold,
+    width: this.sourceWidth,
+    height: this.sourceHeight
+  });
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Performance bottleneck</h3>
+					<p class="left">Diffy won't scale well on larger matrices, because the Big-O time complexity is O(n²)</p>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Raytracing example</h3>
+				</section>
+
+				<section>
+					<h3 class="wasm left">What exactly is WASM</h3>
+					<ul>
+						<li>"Assembly" is Symbolic Machine Code. It's a way for humans to be able to reach and understand Machine Code</li>
+						<li>Web assembly makes it possible for library authors and application developers to code in languages that are more consistently performant but then to have that code run on the web just like JavaScript does; And to integrate with existing JS</li>
+						<li>Shares memory with JS (ArrayBuffers)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Rust to WASM workflow</h3>
+					<ul>
+						<li>
+							It's a compiled target. We can use low-level languages with C or Rust to emit WASM
+						</li>
+						<li>
+							Other compile targets such as asm.js existed before
+						</li>
+						<li>
+							compile commands here
+						</li>
+						<li>
+							WASM only supports numbers
+						</li>
+						<li>
+							Need glue code
+						</li>
+						<li>
+							Webpack
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Rust code</h3>
+
+				</section>
+
+				
+
+				
+
+				<section>
+					<h3 class="wasm left">Rust + WASM-Bindgen</h3>
+					
+				</section>
+
+				<section>
+					<h3 class="wasm left">Webpack</h3>
+					
+				</section>
+
+			</div>
+
+
+
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
