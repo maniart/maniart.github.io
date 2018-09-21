@@ -227,6 +227,49 @@
 				</section>
 
 				<section>
+					<h3 class="wasm left">Diffy.js</h3>
+					<ul class="font-small left">
+						<li>
+							Where did motion happen?
+						</li>
+						<li>
+							How much?
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="wasm left">ArrayBuffer and TypedArray</h3>
+					<small class="left wasm">I wonder what unsigned integers clamped at 255 can represent</small>
+<pre class="clearfix border-wasm clearfix no-margin"><code class="" data-trim>
+drawBlendImageFromBuffer(buffer) {
+  this.blendImageData
+    .data
+    .set(
+      new Uint8ClampedArray(buffer)
+    );
+
+  this.blendCanvasCtx.putImageData(this.blendImageData, 0, 0);
+  this.previousImageData = this.currentImageData;
+}
+
+</code></pre>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Bitwise</h3>
+<pre class="clearfix border-wasm clearfix no-margin"><code data-trim>
+
+// bitwise Math.round
+export const round = (number) => (number + .5) >> 0;
+
+// butwise Math.abs
+export const abs = (value) => (value ^ (value >> 31)) - (value >> 31);
+
+</code></pre>
+				</section>
+
+				<section>
 					<h3 class="wasm left">What Diffy does</h3>
 					<img class="left border-wasm" height="500" src="./assets/undoing.gif">
 					<small class="credit">"On doing and un-doing" <a href="https://mani.io/portfolio/on-doing-and-un-doing/">About</a></small>
@@ -296,7 +339,7 @@ compare(frame1, frame2) {
 				<section>
 					<h3 class="wasm left">Raytracing example</h3>
 					<img class="left border-wasm" height="500" src="./assets/ray.gif">
-					<small><a href="https://github.com/mtharrison/wasm-raytracer">Source</a></li></small>
+					<small><a href="https://github.com/mtharrison/wasm-raytracer">Source</a></small>
 				</section>
 
 				<section>
@@ -310,78 +353,43 @@ compare(frame1, frame2) {
 				</section>
 
 				<section>
+					<h3 class="wasm left">Is it going to Kill JS?</h3>
+					<p class="left font-small">Why can't we be friends?</p>
+				</section>
+
+				<section>
+					<h3 class="wasm left">What existed before</h3>
+					<p class="wasm left">
+						asm.js is a subset of JavaScript designed to allow computer software written in languages such as C to be run as web applications while maintaining performance characteristics considerably better than standard JavaScript, the typical language used for such applications
+					</p>
+				</section>
+
+				<section>
 					<h3 class="wasm left">Why is wasm faster?</h3>
 					<ul class="font-small">
 						<li>It takes less time to download because it is more compact</li>
-						<li>It is faster to parse. JS is parsed from source into AST, and then to an intermediary representation called "Byte code" which is specific to the JS runtime we use. WebAssembly is already byte code. It only needs to be decoded, and decoding is faster than parsing.</li>
-						<li>Compilation happens ahead of time, before the file was uploaded</li>
+						<li>It is faster to parse. JS is parsed from source into AST, and then to an intermediary representation called "Byte code" which is specific to the JS runtime we use. WebAssembly only needs to be decoded, and decoding is faster than parsing.</li>
 						<li>Compilation happens ahead of time, before the file was uploaded, no JIT necessary</li>
 						<li>we don't need to worry about Garbage Collection because languages that target WebAssembly use manual memory management.</li>
+						<li>wasm only supports number data types.</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3 class="wasm left">Rust to wasm workflow</h3>
-					<ul>
-						<li>Write Rust code</li>
-						<li>Compile and target wasm</li>
-						<li></li>
-					</ul>
-					<ol>
-						<li>
-							It's a compiled target. We can use low-level languages with C or Rust to emit WASM
-						</li>
-						<li>
-							Other compile targets such as asm.js existed before
-						</li>
-						<li>
-							compile commands here
-						</li>
-						<li>
-							WASM only supports numbers
-						</li>
-						<li>
-							Needs glue code
-						</li>
-						<li>
-							Webpack
-						</li>
-					</ol>
-				</section>
+					<h3 class="wasm left">
+						Rust
+					</h3>
 
-				<section>
-					<h3 class="wasm left">A very basic example</h3>
-				</section>
-
-				<section>
-					<h3 class="wasm left">Rust to WASM workflow</h3>
-					<ol>
-						<li>
-							It's a compiled target. We can use low-level languages with C or Rust to emit WASM
-						</li>
-						<li>
-							Other compile targets such as asm.js existed before
-						</li>
-						<li>
-							compile commands here
-						</li>
-						<li>
-							WASM only supports numbers
-						</li>
-						<li>
-							Needs glue code
-						</li>
-						<li>
-							Webpack
-						</li>
-					</ol>
+					<p class="wasm left">
+						Rust is a systems programming language sponsored by Mozilla which describes it as a "safe, concurrent, practical language," supporting functional and imperative-procedural paradigms.
+					</p>
 				</section>
 
 				<section>
 					<h3 class="wasm left">Starting with Rust</h3>
 <pre class="border-wasm clearfix no-margin"><code data-trim>
 > cargo new my-awesome-project
-			Created binary (application) `my-awesome-project` project
+	Created binary (application) `my-awesome-project` project
 </code></pre>
 				</section>
 				
@@ -466,6 +474,16 @@ Hello, world!
 				</section>
 
 				<section>
+					<h3 class="wasm left">Should we use WASM for everything?</h3>
+					<p class="wasm left">I mean, we *can*</p>
+				</section>
+
+				<section>
+					<h3 class="wasm">Thank You!</h3>
+					<small class=""><a href="http://mani.io">mani.io</a></small>
+				</section>
+
+				<section>
 					<h3 class="wasm left">Resources</h3>
 					<ul class="font-small left">
 						<li>
@@ -493,11 +511,6 @@ Hello, world!
 								<a href="https://www.youtube.com/watch?v=BnYq7JapeDA">Build the future of the web with WebAssembly and more (Google I/O '18)
 </a></li>
 					</ul>
-				</section>
-
-				<section>
-					<h3 class="wasm">Thank You!</h3>
-					<small class=""><a href="http://mani.io">mani.io</a></small>
 				</section>
 
 			</div>
