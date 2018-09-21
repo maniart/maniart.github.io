@@ -28,7 +28,8 @@
 			.reveal h4,
 			.reveal h5,
 			.reveal h6,
-			.reveal ul {
+			.reveal ul,
+			.reveal ol {
 				font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 				letter-spacing: -4px;
 				text-decoration: underline;
@@ -47,7 +48,8 @@
 				background-color: #6b4fff;
 				color: white; 
 			}
-			.reveal ul {
+			.reveal ul, 
+			.reveal ol {
 				text-decoration: none;
 				letter-spacing: 0.01em;
 			}
@@ -129,10 +131,14 @@
 				</section>
 
 				<section>
-					<h3 class="wasm left"> Hello! </h3>
-					<ul class="font-small left">
-						<li>Blurb</li>
-					</ul>
+					<h3 class="wasm"> Hello! </h3>
+					<img 
+							style="width: 200px;" 
+							src="./assets/me.jpg">
+					<p class="font-small wasm">
+						My name is Mani.
+						I'm a technologist, artist &amp; musician, <br> currently working out of Pioneer Works tech lab on a VR interactive narrative.
+					</p>
 				</section>
 
 				<section>
@@ -284,25 +290,44 @@ compare(frame1, frame2) {
 
 				<section>
 					<h3 class="wasm left">Performance bottleneck</h3>
-					<p class="left">Diffy won't scale well on larger matrices, because the Big-O time complexity is O(n²)</p>
+					<p class="left font-small">Diffy won't scale well on larger matrices, <br>because the Big-O time complexity is O(n²)</p>
 				</section>
 
 				<section>
 					<h3 class="wasm left">Raytracing example</h3>
+					<img class="left border-wasm" height="500" src="./assets/ray.gif">
+					<small><a href="https://github.com/mtharrison/wasm-raytracer">Source</a></li></small>
 				</section>
 
 				<section>
-					<h3 class="wasm left">What exactly is WASM</h3>
-					<ul>
-						<li>"Assembly" is Symbolic Machine Code. It's a way for humans to be able to reach and understand Machine Code</li>
+					<h3 class="wasm left">What exactly is wasm</h3>
+					<ul class="font-small">
+						<li>Binary instruction format</li>
+						<li>Portable target for compilation of high-level languages like C/C++/Rust</li>
 						<li>Web assembly makes it possible for library authors and application developers to code in languages that are more consistently performant but then to have that code run on the web just like JavaScript does; And to integrate with existing JS</li>
 						<li>Shares memory with JS (ArrayBuffers)</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3 class="wasm left">Rust to WASM workflow</h3>
+					<h3 class="wasm left">Why is wasm faster?</h3>
+					<ul class="font-small">
+						<li>It takes less time to download because it is more compact</li>
+						<li>It is faster to parse. JS is parsed from source into AST, and then to an intermediary representation called "Byte code" which is specific to the JS runtime we use. WebAssembly is already byte code. It only needs to be decoded, and decoding is faster than parsing.</li>
+						<li>Compilation happens ahead of time, before the file was uploaded</li>
+						<li>Compilation happens ahead of time, before the file was uploaded, no JIT necessary</li>
+						<li>we don't need to worry about Garbage Collection because languages that target WebAssembly use manual memory management.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Rust to wasm workflow</h3>
 					<ul>
+						<li>Write Rust code</li>
+						<li>Compile and target wasm</li>
+						<li></li>
+					</ul>
+					<ol>
 						<li>
 							It's a compiled target. We can use low-level languages with C or Rust to emit WASM
 						</li>
@@ -316,31 +341,163 @@ compare(frame1, frame2) {
 							WASM only supports numbers
 						</li>
 						<li>
-							Need glue code
+							Needs glue code
 						</li>
 						<li>
 							Webpack
 						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3 class="wasm left">A very basic example</h3>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Rust to WASM workflow</h3>
+					<ol>
+						<li>
+							It's a compiled target. We can use low-level languages with C or Rust to emit WASM
+						</li>
+						<li>
+							Other compile targets such as asm.js existed before
+						</li>
+						<li>
+							compile commands here
+						</li>
+						<li>
+							WASM only supports numbers
+						</li>
+						<li>
+							Needs glue code
+						</li>
+						<li>
+							Webpack
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Starting with Rust</h3>
+<pre class="border-wasm clearfix no-margin"><code data-trim>
+> cargo new my-awesome-project
+			Created binary (application) `my-awesome-project` project
+</code></pre>
+				</section>
+				
+				<section>
+					<h3 class="wasm left">Project scaffolding</h3>
+					<img class="left border-wasm" height="500" src="./assets/rust-scaffold.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Dependencies</h3>
+					<img class="left border-wasm" height="500" src="./assets/toml.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">main.rs</h3>
+					<img class="left border-wasm" height="500" src="./assets/main-rs.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Build & Execute</h3>
+<pre class="border-wasm clearfix no-margin"><code data-trim>
+> cargo run
+     Compiling my-awesome-project v0.1.0 (file:///Users/maninilchiani/Workspace/rust/my-awesome-project)
+     Finished dev [unoptimized + debuginfo] target(s) in 1.62s
+     Running `target/debug/my-awesome-project`
+Hello, world!
+</code></pre>
+				</section>
+
+				<section>
+					<h3 class="wasm left">Build</h3>
+					<img class="left border-wasm" height="500" src="./assets/build.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">wasm-bindgen</h3>
+					<p class="left font-small">
+						Facilitates high-level interactions between wasm modules and JavaScript. 
+						Generates glue code for JS and Rust interoperability.	
+					</p>
+					
+				</section>
+				
+				<section>
+					<h3 class="wasm left">wasm-bindgen</h3>
+					<img class="left border-wasm" height="500" src="./assets/wasm-bindgen.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">build</h3>
+					<img class="left border-wasm" height="500" src="./assets/build-sh.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">lib.rs</h3>
+					<img class="left border-wasm" height="500" src="./assets/lib.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">package.json</h3>
+					<img class="left border-wasm" height="500" src="./assets/package.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Webpack Config</h3>
+					<img class="left border-wasm" height="500" src="./assets/webpack.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">index.js</h3>
+					<img class="left border-wasm" height="500" src="./assets/index.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">The "glue"</h3>
+					<img class="left border-wasm" height="500" src="./assets/glue.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Closing the loop</h3>
+					<img class="left border-wasm" height="500" src="./assets/alert.png">
+				</section>
+
+				<section>
+					<h3 class="wasm left">Resources</h3>
+					<ul class="font-small left">
+						<li>
+							<a href="https://github.com/rustwasm/wasm-bindgen">wasm-bindgen</a>
+						</li>
+							<li>
+								<a href="https://hacks.mozilla.org/2017/02/what-makes-webassembly-fast/">What makes wasm fast</a></li>
+							<li>
+								<a href="https://hacks.mozilla.org/2017/02/a-cartoon-intro-to-webassembly/">A cartoon intro to wasm</a></li>
+							<li>
+								<a href="https://www.youtube.com/watch?v=DKHuEkmsx3M">WebAssembly In Action</a></li>
+							<li>
+								<a href="https://hacks.mozilla.org/2018/04/hello-wasm-pack/">Hello wasm-pack</a></li>
+							<li>
+								<a href="https://rustwasm.github.io/wasm-bindgen/">wasm-bindgen</a></li>
+							<li>
+								<a href="https://hacks.mozilla.org/2018/06/babys-first-rustwebassembly-module-say-hi-to-jsconf-eu/">bb's first rust wasm module</a></li>
+							<li>
+								<a href="https://blog.ryanlevick.com/posts/wasm-bindgen-interop/">wasm-bindgen interop</a></li>
+							<li>
+								<a href="http://matt-harrison.com/raytracing-webassembly-vs-javascript/">ray tracing: wasm vs js</a></li>
+							<li>
+								<a href="https://github.com/mtharrison/wasm-raytracer">wasm raytracer</a></li>
+							<li>
+								<a href="https://www.youtube.com/watch?v=BnYq7JapeDA">Build the future of the web with WebAssembly and more (Google I/O '18)
+</a></li>
 					</ul>
 				</section>
 
 				<section>
-					<h3 class="wasm left">Rust code</h3>
-
-				</section>
-
-				
-
-				
-
-				<section>
-					<h3 class="wasm left">Rust + WASM-Bindgen</h3>
-					
-				</section>
-
-				<section>
-					<h3 class="wasm left">Webpack</h3>
-					
+					<h3 class="wasm">Thank You!</h3>
+					<small class=""><a href="http://mani.io">mani.io</a></small>
 				</section>
 
 			</div>
